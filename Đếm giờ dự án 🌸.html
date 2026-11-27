@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Đếm giờ dự án 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#fff8fb;--bg2:#ffe6ef;--card:#ffffff;--ink:#6b3a4e;--soft:#b27990;--pink:#ff8fb1;--pink2:#ffd0e0;--green:#8fdcbb;--lav:#d3bff5;--line:#ffdce8;--shadow:rgba(255,143,177,.25);--pat:.18;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="dark"]{--bg1:#3a2431;--bg2:#2b1a24;--card:#45293a;--ink:#ffe3ee;--soft:#d9a2b9;--pink:#f08ab0;--pink2:#7a3f57;--green:#5fae92;--lav:#8e78b8;--line:#5f3a4d;--shadow:rgba(0,0,0,.35);--pat:.1}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:'Quicksand',system-ui,sans-serif;font-weight:500;background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:var(--pat);
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cg fill='%23ff6f9c'%3E%3Ccircle cx='40' cy='28' r='9'/%3E%3Ccircle cx='54' cy='38' r='9'/%3E%3Ccircle cx='49' cy='54' r='9'/%3E%3Ccircle cx='31' cy='54' r='9'/%3E%3Ccircle cx='26' cy='38' r='9'/%3E%3Ccircle cx='120' cy='100' r='7'/%3E%3Ccircle cx='131' cy='108' r='7'/%3E%3Ccircle cx='127' cy='121' r='7'/%3E%3Ccircle cx='113' cy='121' r='7'/%3E%3Ccircle cx='109' cy='108' r='7'/%3E%3C/g%3E%3Cg fill='%23ffd54f'%3E%3Ccircle cx='40' cy='42' r='6'/%3E%3Ccircle cx='120' cy='112' r='4.5'/%3E%3C/g%3E%3Cg fill='%2377d4ad'%3E%3Cellipse cx='100' cy='30' rx='12' ry='5' transform='rotate(-35 100 30)'/%3E%3Cellipse cx='116' cy='22' rx='12' ry='5' transform='rotate(25 116 22)'/%3E%3Cellipse cx='30' cy='120' rx='12' ry='5' transform='rotate(30 30 120)'/%3E%3Cellipse cx='46' cy='130' rx='12' ry='5' transform='rotate(-30 46 130)'/%3E%3C/g%3E%3C/svg%3E")}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:18px 14px 60px}
+.modes{display:flex;justify-content:center;gap:4px;width:max-content;max-width:100%;margin:6px auto 0;background:var(--card);border:2px solid var(--line);border-radius:999px;padding:3px;box-shadow:0 3px 10px var(--shadow)}.mode{background:transparent;color:var(--soft);padding:6px 14px;font-size:.88rem}.mode.on{background:var(--pink);color:#fff}
+.quote{max-width:640px;margin:0 auto 16px;text-align:center;font-weight:700;line-height:1.5;color:var(--ink);background:var(--card);border:2px dashed var(--pink);border-radius:18px;padding:11px 16px;cursor:pointer;box-shadow:0 5px 14px var(--shadow)}
+.plog{margin-top:14px;border-top:2px dashed var(--line);padding-top:10px}.plog .tabs{margin-bottom:4px}.plog .empty{padding:10px}
+h1{font-family:'Pacifico',cursive;font-weight:400;text-align:center;color:var(--pink);font-size:2.1rem;margin:10px 0 2px}
+.sub{text-align:center;color:var(--soft);margin:0 0 16px}
+button{font:inherit;font-weight:700;border:0;border-radius:999px;padding:9px 16px;cursor:pointer;color:#fff;transition:transform .12s,opacity .12s;background:var(--pink)}
+button:hover:not(:disabled){transform:translateY(-2px)}
+button:disabled{opacity:.35;cursor:not-allowed}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.stat{background:var(--card);border:2px solid var(--line);border-radius:20px;padding:12px 8px;text-align:center;box-shadow:0 5px 14px var(--shadow)}
+.stat b{display:block;font-size:1.35rem;color:var(--pink)}.stat span{font-size:.82rem;color:var(--soft)}
+.add{display:flex;gap:8px;background:var(--card);border:2px dashed var(--pink2);border-radius:22px;padding:10px;box-shadow:0 6px 18px var(--shadow)}
+.add input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:1rem;color:var(--ink);padding:8px 12px;outline:none}
+.list{display:grid;gap:16px;margin:18px 0 26px}
+.card,.panel{position:relative;background:var(--card);border:2px solid var(--line);border-radius:26px;padding:18px;box-shadow:0 8px 22px var(--shadow)}
+.card.run{border-color:var(--pink);animation:glow 2s ease-in-out infinite}
+.card.done{opacity:.88}
+@keyframes glow{50%{box-shadow:0 8px 30px var(--pink)}}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.name{font-size:1.2rem;font-weight:700;overflow-wrap:anywhere}
+.badge{font-size:.75rem;padding:3px 10px;border-radius:999px;background:var(--pink2);color:var(--ink);white-space:nowrap}
+.run .badge{background:var(--green)}.done .badge{background:var(--lav)}
+.time{font-size:2.6rem;font-weight:700;text-align:center;margin:8px 0 0;letter-spacing:1px;font-variant-numeric:tabular-nums;color:var(--pink)}
+.meta{text-align:center;color:var(--soft);font-size:.88rem;margin-bottom:12px}
+.btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.b-start{background:var(--green)}.b-pause{background:var(--lav)}
+.small{background:transparent;color:var(--soft);padding:4px 8px;font-size:.85rem}
+.empty{text-align:center;color:var(--soft);padding:26px 10px}
+h2{font-size:1.15rem;margin:0 0 10px;color:var(--ink)}
+.panel{margin-bottom:18px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.tab{background:var(--pink2);color:var(--ink);padding:6px 14px;font-size:.9rem}
+.tab.on{background:var(--pink);color:#fff}
+.nav{background:transparent;color:var(--pink);padding:4px 10px;font-size:1.1rem}
+.rng{flex:1;text-align:center;font-weight:700;min-width:120px}
+.chart{display:flex;align-items:flex-end;gap:3px;height:170px;padding-top:6px;border-bottom:2px solid var(--line);overflow-x:auto}
+.col{flex:1;min-width:0;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.bar{width:78%;max-width:46px;min-height:2px;border-radius:8px 8px 0 0;background:linear-gradient(var(--pink),var(--pink2));transition:height .4s}
+.bar.now{background:linear-gradient(var(--green),var(--lav))}
+.val{font-size:.68rem;color:var(--soft);margin-bottom:2px;white-space:nowrap}
+.val.v{writing-mode:vertical-rl;font-size:.58rem}
+.lbls{display:flex;gap:3px}.lbls span{flex:1;text-align:center;font-size:.72rem;color:var(--soft);padding-top:4px;min-width:0}
+.sum{text-align:center;color:var(--soft);font-size:.9rem;margin-top:8px}
+.dayh{display:flex;justify-content:space-between;font-weight:700;margin-top:12px;padding:6px 10px;border-radius:12px;background:var(--pink2)}
+.row{display:flex;gap:8px;justify-content:space-between;align-items:center;padding:7px 10px;border-bottom:1px dotted var(--line);font-size:.92rem}
+.row .n{flex:1;overflow-wrap:anywhere}.row .t{color:var(--soft);white-space:nowrap}.row b{color:var(--pink);white-space:nowrap}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+<div class="wrap">
+  <div class="modes"><button class="mode" data-th="light">☀️ Nền sáng</button><button class="mode" data-th="dark">🌙 Nền tối</button></div>
+  <h1>🌸 Đếm giờ dự án 🌸</h1>
+  <p class="sub" id="today"></p>
+  <p class="quote" id="quote" title="Bấm để đổi câu khác"></p>
+  <div class="stats">
+    <div class="stat"><b id="sToday">0m</b><span>Hôm nay</span></div>
+    <div class="stat"><b id="sWeek">0m</b><span>Tuần này</span></div>
+    <div class="stat"><b id="sCount">0</b><span>Mục giờ</span></div>
+  </div>
+  <div class="add"><input id="inp" placeholder="Tên dự án mới…" maxlength="80"><button id="addBtn">＋ Thêm</button></div>
+  <div class="list" id="list"></div>
+
+  <div class="panel">
+    <h2>📊 Tổng kết giờ làm</h2>
+    <div class="tabs">
+      <button class="tab" data-cm="week">Tuần</button><button class="tab" data-cm="month">Tháng</button>
+      <button class="nav" id="prev">‹</button><span class="rng" id="rng"></span><button class="nav" id="next">›</button>
+    </div>
+    <div class="chart" id="chart"></div><div class="lbls" id="lbls"></div>
+    <div class="sum" id="csum"></div>
+  </div>
+
+</div>
+<script>
+const KEY='gio-du-an-v1',$=id=>document.getElementById(id);
+let projects=[];try{projects=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(projects))}catch(e){}};
+let cm='week',off=0,lf='today';const pl={};
+const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const status=p=>p.finished?'done':(p.sessions.length&&p.sessions[p.sessions.length-1][1]===null)?'run':p.sessions.length?'pause':'idle';
+const total=p=>p.sessions.reduce((t,[s,e])=>t+((e??Date.now())-s),0);
+const sod=t=>{const d=new Date(t);d.setHours(0,0,0,0);return d.getTime()};
+const wk=t=>{const d=new Date(sod(t));d.setDate(d.getDate()-((d.getDay()+6)%7));return d.getTime()};
+const DAY=86400000,WD=['Chủ nhật','Thứ hai','Thứ ba','Thứ tư','Thứ năm','Thứ sáu','Thứ bảy'],WS=['T2','T3','T4','T5','T6','T7','CN'];
+const fmt=ms=>{const s=Math.floor(ms/1000);return [Math.floor(s/3600),Math.floor(s%3600/60),s%60].map(n=>String(n).padStart(2,'0')).join(':')};
+const hm=ms=>{const m=Math.floor(ms/60000),h=Math.floor(m/60);return h?`${h}h ${m%60}m`:`${m}m`};
+const dstr=t=>new Date(t).toLocaleDateString('vi-VN');
+const tstr=t=>new Date(t).toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});
+const segs=()=>projects.flatMap(p=>p.sessions.map(([s,e])=>({p,s,e})));
+function dayMap(){const m={};segs().forEach(({s,e})=>{let a=s;const en=e??Date.now();while(a<en){const d0=sod(a),b=Math.min(en,d0+DAY+ (new Date(d0+DAY).getHours()?-0:0));const nb=sod(d0+DAY+3600000);const bb=Math.min(en,nb);m[d0]=(m[d0]||0)+(bb-a);a=bb}});return m}
+const label={idle:'Chưa bắt đầu',run:'Đang chạy 🌷',pause:'Đang tạm dừng',done:'Đã kết thúc ✿'};
+function renderSummary(){
+  const m=dayMap(),n=Date.now(),w0=wk(n);
+  $('sToday').textContent=hm(m[sod(n)]||0);
+  $('sWeek').textContent=hm(Object.entries(m).reduce((t,[d,v])=>t+(+d>=w0?v:0),0));
+  $('sCount').textContent=segs().length;
+  $('today').textContent=`${WD[new Date().getDay()]}, ${dstr(n)} ✿ Làm việc thật xinh nhé`;
+}
+function renderProjects(){
+  $('list').innerHTML=projects.length?projects.map(p=>{
+    const st=status(p),c=p.created||(p.sessions[0]&&p.sessions[0][0]);
+    return `<div class="card ${st}"><div class="top"><div class="name">🌺 ${esc(p.name)}</div><span class="badge">${label[st]}</span></div>
+    <div class="time" data-t="${p.id}">${fmt(total(p))}</div>
+    <div class="meta">${c?'Tạo ngày '+dstr(c)+' · ':''}Tổng cộng</div>
+    <div class="btns">
+      <button class="b-start" data-a="start" data-id="${p.id}" ${st==='run'||st==='done'?'disabled':''}>▶ ${st==='pause'?'Tiếp tục':'Bắt đầu'}</button>
+      <button class="b-pause" data-a="pause" data-id="${p.id}" ${st!=='run'?'disabled':''}>⏸ Dừng</button>
+      <button data-a="end" data-id="${p.id}" ${st==='idle'||st==='done'?'disabled':''}>✔ Kết thúc</button>
+    </div><div class="btns" style="margin-top:6px">${st==='done'?`<button class="small" data-a="reopen" data-id="${p.id}">↺ Mở lại</button>`:''}<button class="small" data-a="del" data-id="${p.id}">🗑 Xoá</button></div>${plogHtml(p)}</div>`}).join(''):'<div class="empty">Chưa có dự án nào 🌼<br>Hãy thêm dự án đầu tiên nhé!</div>';
+}
+function renderChart(){
+  const m=dayMap(),n=Date.now();let days=[],lb=[],rng;
+  if(cm==='week'){const s=wk(n)+off*7*DAY;for(let i=0;i<7;i++){const d=sod(s+i*DAY+3600000);days.push(d);lb.push(WS[i])}rng=`${dstr(days[0]).slice(0,5)} – ${dstr(days[6]).slice(0,5)}`}
+  else{const d=new Date();d.setDate(1);d.setMonth(d.getMonth()+off);const y=d.getFullYear(),mo=d.getMonth(),cnt=new Date(y,mo+1,0).getDate();for(let i=1;i<=cnt;i++){days.push(new Date(y,mo,i).getTime());lb.push(i%5===1||i===cnt?i:'')}rng=`Tháng ${mo+1}/${y}`}
+  const vals=days.map(d=>m[d]||0),mx=Math.max(...vals,1),t0=sod(n),mon=cm==='month';
+  $('rng').textContent=rng;
+  $('chart').innerHTML=vals.map((v,i)=>`<div class="col" title="${dstr(days[i])}: ${hm(v)}">${v?`<span class="val ${mon?'v':''}">${hm(v)}</span>`:''}<div class="bar ${days[i]===t0?'now':''}" style="height:${v/mx*(mon?72:82)}%"></div></div>`).join('');
+  $('lbls').innerHTML=lb.map(l=>`<span>${l}</span>`).join('');
+  $('csum').textContent=`Tổng ${cm==='week'?'tuần':'tháng'}: ${hm(vals.reduce((a,b)=>a+b,0))} · Trung bình ngày có làm: ${hm(vals.reduce((a,b)=>a+b,0)/Math.max(1,vals.filter(Boolean).length))}`;
+  document.querySelectorAll('[data-cm]').forEach(b=>b.classList.toggle('on',b.dataset.cm===cm));
+}
+function plogHtml(p){
+  const lf=pl[p.id]||'today',n=Date.now(),th=lf==='today'?sod(n):lf==='week'?wk(n):0;
+  const L=p.sessions.map(([s,e])=>({p,s,e})).filter(x=>x.s>=th).sort((a,b)=>b.s-a.s),g={};
+  L.forEach(x=>{(g[sod(x.s)]=g[sod(x.s)]||[]).push(x)});
+  const tabs=[['today','Hôm nay'],['week','Tuần'],['all','Tất cả']].map(([k,t])=>`<button class="tab ${k===lf?'on':''}" data-a="lf" data-v="${k}" data-id="${p.id}">${t}</button>`).join('');
+  return `<div class="plog"><div class="tabs">🕘 Mục giờ đã ghi: ${tabs}</div>`+(L.length?Object.keys(g).sort((a,b)=>b-a).map(d=>{const r=g[d];return `<div class="dayh"><span>${WD[new Date(+d).getDay()]}, ${dstr(+d)}</span><span>${hm(r.reduce((t,x)=>t+(x.e??n)-x.s,0))}</span></div>`+r.map(x=>`<div class="row"><span class="n">🌷</span><span class="t">${tstr(x.s)} – ${x.e?tstr(x.e)+(sod(x.e)!==sod(x.s)?' ('+dstr(x.e).slice(0,5)+')':''):'đang chạy'}</span><b>${hm((x.e??n)-x.s)}</b></div>`).join('')}).join(''):'<div class="empty">Chưa có mục giờ nào 🌼</div>')+'</div>';
+}
+const all=()=>{renderSummary();renderProjects();renderChart()};
+function tick(){let r=0;projects.forEach(p=>{if(status(p)==='run'){r=1;const a=document.querySelector(`[data-t="${p.id}"]`);if(a)a.textContent=fmt(total(p))}});if(r){renderSummary()}}
+function add(){const v=$('inp').value.trim();if(!v)return;projects.unshift({id:Date.now().toString(36)+Math.random().toString(36).slice(2,5),name:v,created:Date.now(),sessions:[],finished:false});$('inp').value='';save();all()}
+$('addBtn').onclick=add;$('inp').addEventListener('keydown',e=>{if(e.key==='Enter')add()});
+$('list').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;const p=projects.find(x=>x.id===b.dataset.id);if(!p)return;
+  const a=b.dataset.a,now=Date.now(),last=p.sessions[p.sessions.length-1];
+  if(a==='lf'){pl[p.id]=b.dataset.v;renderProjects();return}
+  if(a==='start'&&status(p)!=='run')p.sessions.push([now,null]);
+  else if((a==='pause'||a==='end')&&last&&last[1]===null)last[1]=now;
+  if(a==='end')p.finished=true;if(a==='reopen')p.finished=false;
+  if(a==='del'){if(!confirm('Xoá dự án "'+p.name+'" cùng toàn bộ thời gian đã ghi?'))return;projects=projects.filter(x=>x!==p)}
+  save();all();
+});
+document.querySelectorAll('[data-cm]').forEach(b=>b.onclick=()=>{cm=b.dataset.cm;off=0;renderChart()});
+$('prev').onclick=()=>{off--;renderChart()};$('next').onclick=()=>{if(off<0){off++;renderChart()}};
+// câu nhắc học tập
+const Q=["Kiến thức không tự chui vào đầu mày đâu. Bớt nằm ườn ra và mở sách đi!","Người khác đang học để thay đổi cuộc đời, còn mày đang nằm đấy chờ phép màu à?","Đừng hỏi tại sao mình mãi giậm chân tại chỗ. Nhìn cái cách mày học hành là hiểu rồi đấy!","Mày không thiếu thời gian, mày chỉ thừa thời gian để làm mấy chuyện vô bổ.","Đừng lấy lý do mệt mỏi để bao biện cho sự lười biếng. Ai chẳng mệt, chỉ có người chịu cố gắng mới tiến lên.","Muốn có tương lai tốt đẹp nhưng hiện tại lại không chịu bỏ ra nổi một tiếng học. Mày định dùng phép thuật à?","Đầu óc không chịu vận động thì đừng trách tại sao người khác bỏ xa mình.","Đừng ghen tị với thành công của người khác khi chính mày còn chẳng chịu làm những việc cơ bản nhất.","Học không giỏi không đáng sợ, đáng sợ là vừa dốt vừa không chịu sửa.","Mày có thể nghèo tiền, nhưng đừng để bản thân nghèo cả kiến thức lẫn ý chí.","Định học vào ngày mai đến bao giờ? Ngày mai của mày chắc sống dai hơn cả tuổi thọ con rùa!","Mở điện thoại nhanh như chớp, mở sách thì chậm như rùa bò. Mày đang học hay đang thi xem ai lười hơn?","Cứ trì hoãn đi, rồi đến ngày deadline nó vả cho tỉnh cả người.","Mày không cần thêm động lực, mày cần bớt cái tính lười như hủi!","Hôm nay không học, ngày mai cũng không học, thế mày định đợi tổ tiên nhập vào rồi truyền kiến thức à?","Đừng nói mày không có thời gian. Mày vừa dành ba tiếng để lướt điện thoại đấy, đồ ngốc!","Kế hoạch thì dài như sớ Táo quân, hành động thì ngắn hơn cả tuổi thọ con kiến.","Mỗi lần định trì hoãn, hãy nhớ rằng tương lai không có nghĩa vụ phải trả giá thay cho sự lười biếng của mày.","Mày đang nghỉ ngơi hay đang trốn tránh trách nhiệm với chính cuộc đời mình?","Cứ nằm đấy đi, đối thủ của mày đang học xong ba chương rồi đấy!","Không biết thì học, không hiểu thì hỏi. Đừng có vừa ngu vừa sĩ diện!","Ngu không phải cái tội, nhưng biết mình ngu mà vẫn không chịu học thì đúng là hết cứu.","Đừng sợ người khác cười khi đặt câu hỏi. Sợ nhất là đến lúc cần kiến thức thì trong đầu mày chẳng có cái quái gì!","Mỗi lần lười đọc thêm một trang sách là mày đang tự nguyện giữ nguyên sự ngu dốt của mình.","Đừng tưởng mình biết một chút đã là giỏi. Cái đầu mày còn thiếu cả một đại dương kiến thức đấy!","Không chịu học thì đừng mong người khác tôn trọng năng lực của mày.","Đừng lấy bằng cấp ra làm lá chắn cho một cái đầu rỗng tuếch.","Người thông minh biết mình còn thiếu gì. Kẻ ngốc luôn nghĩ mình đã đủ giỏi.","Đừng để người ta hỏi một câu đơn giản mà mày phải đứng đực ra như trời trồng.","Kiến thức không có lỗi khi mày không hiểu nó. Lỗi là mày chẳng chịu bỏ công sức ra học!","Muốn ngồi vị trí người khác không ngồi được thì phải chịu được những thứ người khác không chịu được. Bớt than vãn!","Không ai có nghĩa vụ phải cứu tương lai của mày. Tự đứng dậy mà học!","Mày muốn có một cuộc đời đáng tự hào hay muốn cả đời ngồi tiếc nuối vì ngày xưa mình quá lười?","Đừng mong một ngày thành công nếu hôm nay mày vẫn sống như một đứa chẳng có mục tiêu.","Người ta đầu tư vào bản thân, còn mày đầu tư thời gian vào việc than thân trách phận. Thế thì so sánh cái gì?","Không có năng lực thì lấy gì cạnh tranh? Không có kiến thức thì lấy gì đòi hỏi cơ hội?","Tương lai của mày đang được xây dựng bằng chính những giờ học mà mày đang muốn trốn tránh.","Đừng đợi đến khi bị cuộc đời vả cho vài cú mới nhận ra kiến thức quan trọng thế nào.","Muốn được lựa chọn công việc tốt thì trước tiên phải khiến bản thân đủ năng lực để được lựa chọn.","Không học hôm nay thì mai này đừng trách tại sao mình chỉ có thể nhận những gì người khác không muốn!"];
+let qi=Q.length*Math.random()|0;const showQ=()=>{$('quote').textContent='“'+Q[qi]+'”'};showQ();
+const nextQ=()=>{let j;do{j=Q.length*Math.random()|0}while(j===qi);qi=j;showQ()};
+$('quote').onclick=nextQ;setInterval(nextQ,60000);
+// theme (mặc định sáng)
+const root=document.documentElement;let th='light';try{th=localStorage.getItem('gio-theme')||'light'}catch(e){}
+const setTh=t=>{th=t;root.dataset.theme=t;document.querySelectorAll('[data-th]').forEach(b=>b.classList.toggle('on',b.dataset.th===t));try{localStorage.setItem('gio-theme',t)}catch(e){}};setTh(th);
+document.querySelectorAll('[data-th]').forEach(b=>b.onclick=()=>setTh(b.dataset.th));
+all();setInterval(tick,1000);setInterval(()=>{if(projects.some(p=>status(p)==='run')){renderChart();renderProjects()}},30000);
+document.addEventListener('visibilitychange',()=>{renderSummary();tick()});
+// hoa & tuyết rơi
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  const cv=$('fx'),cx=cv.getContext('2d'),G=['❀','✿','❄','❅','✾','❁'],C=['#ff8fb1','#ffb3cc','#f7a1c4','#cdb4f6','#a9d8ff','#ffd27f'];
+  let W,H,dpr=Math.min(devicePixelRatio||1,2);
+  const rs=()=>{W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0)};rs();addEventListener('resize',rs);
+  const mk=(top)=>({x:Math.random()*W,y:top?-20:Math.random()*H,s:10+Math.random()*16,vy:.35+Math.random()*.9,ph:Math.random()*6.28,sw:.4+Math.random()*.8,r:Math.random()*6.28,vr:(Math.random()-.5)*.03,g:G[Math.random()*G.length|0],c:C[Math.random()*C.length|0],a:.45+Math.random()*.45});
+  const P=Array.from({length:Math.min(50,Math.round(innerWidth/18))},()=>mk(false));
+  (function f(){
+    if(!document.hidden){cx.clearRect(0,0,W,H);
+      for(const p of P){p.y+=p.vy;p.ph+=.015;p.x+=Math.sin(p.ph)*p.sw;p.r+=p.vr;
+        if(p.y>H+20){Object.assign(p,mk(true))}
+        cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.globalAlpha=p.a;cx.fillStyle=p.c;cx.font=p.s+'px sans-serif';cx.textAlign='center';cx.textBaseline='middle';cx.fillText(p.g,0,0);cx.restore()}}
+    requestAnimationFrame(f)})();
+})();
+</script>
+</body>
+</html>
