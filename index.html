@@ -62,10 +62,34 @@ h2{font-size:1.15rem;margin:0 0 10px;color:var(--ink)}
 .dayh{display:flex;justify-content:space-between;font-weight:700;margin-top:12px;padding:6px 10px;border-radius:12px;background:var(--pink2)}
 .row{display:flex;gap:8px;justify-content:space-between;align-items:center;padding:7px 10px;border-bottom:1px dotted var(--line);font-size:.92rem}
 .row .n{flex:1;overflow-wrap:anywhere}.row .t{color:var(--soft);white-space:nowrap}.row b{color:var(--pink);white-space:nowrap}
+:root{--cat:#26232b}:root[data-theme="dark"]{--cat:#4b4458}
+.panel.game{display:grid;gap:12px}
+.hero{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.streak{font-size:1.5rem;font-weight:700;color:#ff7a45}.lv{font-weight:700}
+.prog{height:14px;border-radius:99px;background:var(--pink2);overflow:hidden}.prog i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--pink),var(--lav));transition:width .5s}
+.goal{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.9rem;color:var(--soft)}.goal input{width:64px;font:inherit;border:2px solid var(--line);border-radius:10px;padding:3px 6px;background:var(--card);color:var(--ink)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}.cal span{padding:5px 0;border-radius:10px;font-size:.8rem;color:var(--soft);background:var(--bg2)}.cal span:empty{background:none}.cal .h{background:none;font-weight:700}.cal .full{font-size:1.1rem;background:var(--pink2)}.cal .part{background:var(--green);color:#fff}.cal .tod{outline:2px solid var(--pink)}
+.garden{display:flex;flex-wrap:wrap;gap:2px;font-size:1.5rem;min-height:36px}.garden.wilt span{filter:grayscale(.8);transform:rotate(14deg)}
+.badges{display:flex;gap:8px;flex-wrap:wrap}.bd{padding:5px 10px;border-radius:14px;background:var(--pink2);font-size:.82rem}.bd.off{filter:grayscale(1);opacity:.45}
+.pt{position:fixed;pointer-events:none;z-index:9;font-size:1.2rem;animation:fly .9s ease-out forwards}@keyframes fly{to{transform:translate(var(--dx),var(--dy)) scale(.4) rotate(40deg);opacity:0}}
+.say{position:fixed;pointer-events:none;z-index:9;font-weight:700;color:var(--pink);text-shadow:0 0 6px var(--card),0 1px 0 var(--card);white-space:nowrap;transform:translateX(-50%);animation:up 1.3s ease-out forwards}@keyframes up{to{transform:translate(-50%,-70px);opacity:0}}
+#cat{position:fixed;left:0;top:0;z-index:8;width:84px;height:60px;cursor:pointer;touch-action:manipulation;filter:drop-shadow(0 0 2px rgba(255,255,255,.7))}
+#cat .tail{transform-origin:72px 54px;animation:wag 1.6s ease-in-out infinite}@keyframes wag{50%{transform:rotate(25deg)}}
+#cat{--lid:0}#cat .lid{transform-box:fill-box;transform-origin:top;transform:scaleY(var(--lid));animation:blink 5s infinite}
+#cat.hate{--lid:.45}#cat.sleep{--lid:1}#cat.love .ir{fill:#ff8fb1}
+@keyframes blink{0%,93%,100%{transform:scaleY(var(--lid))}96%{transform:scaleY(1)}}
+#bub{position:fixed;z-index:8;pointer-events:none;width:max-content;max-width:210px;opacity:0;transition:opacity .25s;transform:translateY(calc(-100% - 22px));filter:drop-shadow(2px 0 0 var(--pink)) drop-shadow(-2px 0 0 var(--pink)) drop-shadow(0 2px 0 var(--pink)) drop-shadow(0 -2px 0 var(--pink))}
+#bub b{display:block;position:relative;background:var(--card);color:var(--ink);border-radius:22px;padding:8px 14px;font-size:.8rem;font-weight:700;font-style:italic;line-height:1.35}
+#bub b::before,#bub b::after{content:"";position:absolute;background:var(--card);border-radius:50%}
+#bub b::before{width:26px;height:26px;top:-11px;left:16px}#bub b::after{width:32px;height:32px;top:-15px;right:20px}
+#bub i{position:absolute;background:var(--card);border-radius:50%}#bub .d1{width:11px;height:11px;left:22px;bottom:-14px}#bub .d2{width:7px;height:7px;left:16px;bottom:-24px}
+.banner{display:block;width:100%;border-radius:26px;border:2px solid var(--line);box-shadow:0 8px 22px var(--shadow);margin-bottom:12px}
 </style>
 </head>
 <body>
 <canvas id="fx"></canvas>
+<div id="bub"><b id="bt"></b><i class="d1"></i><i class="d2"></i></div>
+<svg id="cat" viewBox="0 0 100 72" aria-label="Mèo đen"><path class="tail" d="M72 54C90 54 94 34 84 22" fill="none" stroke-width="10" stroke-linecap="round" style="stroke:var(--cat)"/><g style="fill:var(--cat)"><path d="M6 46C6 30 16 22 30 22C42 22 52 26 62 30C72 36 78 46 76 56C74 64 58 68 40 68C20 68 6 62 6 46Z"/><path d="M9 30 12 10 26 22zM30 22 42 10 47 30z"/></g><g id="eyes"><circle cx="21" cy="40" r="7.5" fill="#fff"/><circle class="ir" cx="21" cy="40" r="6" fill="#ffcf4a"/><circle cx="21" cy="40.5" r="3.4" fill="#1b1b22"/><circle cx="23" cy="38" r="1.5" fill="#fff"/><circle cx="38" cy="40" r="7.5" fill="#fff"/><circle class="ir" cx="38" cy="40" r="6" fill="#59c3ff"/><circle cx="38" cy="40.5" r="3.4" fill="#1b1b22"/><circle cx="40" cy="38" r="1.5" fill="#fff"/></g><rect class="lid" x="11" y="31" width="36" height="17" style="fill:var(--cat)"/><path d="M4 43h7M5 47l6-2M48 43h7M47 46l7 2" stroke="#fff" stroke-opacity=".85" stroke-width="1" fill="none"/></svg>
 <div class="wrap">
   <div class="modes"><button class="mode" data-th="light">☀️ Nền sáng</button><button class="mode" data-th="dark">🌙 Nền tối</button></div>
   <h1>🌸 Đếm giờ dự án 🌸</h1>
@@ -78,6 +102,15 @@ h2{font-size:1.15rem;margin:0 0 10px;color:var(--ink)}
   </div>
   <div class="add"><input id="inp" placeholder="Tên dự án mới…" maxlength="80"><button id="addBtn">＋ Thêm</button></div>
   <div class="list" id="list"></div>
+  <div class="panel game">
+    <div class="hero"><div class="streak" id="gStreak">🔥 0 ngày</div><div class="lv" id="gLv"></div></div>
+    <div><div class="prog"><i id="gXp"></i></div><div class="sum" id="gXpT"></div></div>
+    <div class="goal">🎯 Mục tiêu mỗi ngày: <input id="gGoal" type="number" min="5" step="5"> phút <b id="gGoalT"></b></div>
+    <div class="prog"><i id="gDay"></i></div>
+    <div><h2>🌸 Lịch hoa tháng này</h2><div class="cal" id="cal"></div></div>
+    <div><h2>🌱 Vườn hoa của bạn</h2><div class="garden" id="garden"></div><div class="sum" id="gardenT"></div></div>
+    <div><h2>🏅 Huy hiệu</h2><div class="badges" id="badges"></div></div>
+  </div>
 
   <div class="panel">
     <h2>📊 Tổng kết giờ làm</h2>
@@ -145,14 +178,15 @@ function plogHtml(p){
   const tabs=[['today','Hôm nay'],['week','Tuần'],['all','Tất cả']].map(([k,t])=>`<button class="tab ${k===lf?'on':''}" data-a="lf" data-v="${k}" data-id="${p.id}">${t}</button>`).join('');
   return `<div class="plog"><div class="tabs">🕘 Mục giờ đã ghi: ${tabs}</div>`+(L.length?Object.keys(g).sort((a,b)=>b-a).map(d=>{const r=g[d];return `<div class="dayh"><span>${WD[new Date(+d).getDay()]}, ${dstr(+d)}</span><span>${hm(r.reduce((t,x)=>t+(x.e??n)-x.s,0))}</span></div>`+r.map(x=>`<div class="row"><span class="n">🌷</span><span class="t">${tstr(x.s)} – ${x.e?tstr(x.e)+(sod(x.e)!==sod(x.s)?' ('+dstr(x.e).slice(0,5)+')':''):'đang chạy'}</span><b>${hm((x.e??n)-x.s)}</b></div>`).join('')}).join(''):'<div class="empty">Chưa có mục giờ nào 🌼</div>')+'</div>';
 }
-const all=()=>{renderSummary();renderProjects();renderChart()};
-function tick(){let r=0;projects.forEach(p=>{if(status(p)==='run'){r=1;const a=document.querySelector(`[data-t="${p.id}"]`);if(a)a.textContent=fmt(total(p))}});if(r){renderSummary()}}
+const all=()=>{renderSummary();renderProjects();renderChart();renderGame()};
+function tick(){let r=0;projects.forEach(p=>{if(status(p)==='run'){r=1;const a=document.querySelector(`[data-t="${p.id}"]`);if(a)a.textContent=fmt(total(p))}});if(r){renderSummary();renderGame()}}
 function add(){const v=$('inp').value.trim();if(!v)return;projects.unshift({id:Date.now().toString(36)+Math.random().toString(36).slice(2,5),name:v,created:Date.now(),sessions:[],finished:false});$('inp').value='';save();all()}
 $('addBtn').onclick=add;$('inp').addEventListener('keydown',e=>{if(e.key==='Enter')add()});
 $('list').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;const p=projects.find(x=>x.id===b.dataset.id);if(!p)return;
   const a=b.dataset.a,now=Date.now(),last=p.sessions[p.sessions.length-1];
   if(a==='lf'){pl[p.id]=b.dataset.v;renderProjects();return}
+  if(TS[a]){say(e.clientX,e.clientY-20,pick(TS[a]));if(a==='end')burst(e.clientX,e.clientY,16);catHype(a)}
   if(a==='start'&&status(p)!=='run')p.sessions.push([now,null]);
   else if((a==='pause'||a==='end')&&last&&last[1]===null)last[1]=now;
   if(a==='end')p.finished=true;if(a==='reopen')p.finished=false;
@@ -166,6 +200,66 @@ const Q=["Kiến thức không tự chui vào đầu mày đâu. Bớt nằm ư�
 let qi=Q.length*Math.random()|0;const showQ=()=>{$('quote').textContent='“'+Q[qi]+'”'};showQ();
 const nextQ=()=>{let j;do{j=Q.length*Math.random()|0}while(j===qi);qi=j;showQ()};
 $('quote').onclick=nextQ;setInterval(nextQ,60000);
+// ===== game: streak, XP, vườn, hiệu ứng, mèo =====
+const LV=[[0,'Mầm non 🌱'],[60,'Nụ hoa 🌷'],[300,'Hoa nở 🌸'],[900,'Cả khu vườn 🌺'],[2400,'Nữ hoàng hoa 👑']],FL=['🌸','🌷','🌼','🌺','🌻','🪻'],EM=['🌸','💖','⭐','✨','🌷','🦋'];
+const TS={start:['Cố lên! 💪','Tập trung nào ✿','+1 bông hoa 🌸','Làm đi, đừng nằm ườn! 😤','Bắt đầu thôi! 🚀'],pause:['Nghỉ chút rồi quay lại nhé ☕','Uống ngụm nước đi 💧'],end:['Giỏi quá! 🎉','Hoàn thành! 🏁','Tự hào ghê 💖','Xong rồi, đỉnh! 🌟']};TS.reopen=TS.start;
+let G={goal:60};try{Object.assign(G,JSON.parse(localStorage.getItem('gio-game-v1')||'{}'))}catch(e){}
+const saveG=()=>{try{localStorage.setItem('gio-game-v1',JSON.stringify(G))}catch(e){}};
+const pick=a=>a[Math.random()*a.length|0];
+function burst(x,y,n=7){for(let i=0;i<n;i++){const s=document.createElement('span');s.className='pt';s.textContent=pick(EM);const a=Math.random()*6.28,r=30+Math.random()*50;s.style.cssText=`left:${x}px;top:${y}px;--dx:${Math.cos(a)*r}px;--dy:${Math.sin(a)*r-20}px`;document.body.appendChild(s);setTimeout(()=>s.remove(),950)}}
+function say(x,y,t){const s=document.createElement('div');s.className='say';s.textContent=t;s.style.left=Math.min(Math.max(x,90),innerWidth-90)+'px';s.style.top=y+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),1400)}
+const petals=()=>{for(let i=0;i<8;i++)setTimeout(()=>burst(Math.random()*innerWidth,innerHeight*.25+Math.random()*innerHeight*.4,9),i*120)};
+function renderGame(){
+  const m=dayMap(),n=Date.now(),t0=sod(n),gm=G.goal*60000,tot=Object.values(m).reduce((a,b)=>a+b,0),xp=Math.floor(tot/60000),td=m[t0]||0;
+  let st=0,d=t0;if((m[d]||0)<gm)d=sod(d-36e5);while((m[d]||0)>=gm&&st<3650){st++;d=sod(d-36e5)}
+  let li=0;LV.forEach(([x],i)=>{if(xp>=x)li=i});const nx=LV[li+1];
+  $('gStreak').textContent=`🔥 ${st} ngày liên tiếp`;$('gLv').textContent=`${LV[li][1]} · ${xp} XP`;
+  $('gXp').style.width=(nx?(xp-LV[li][0])/(nx[0]-LV[li][0])*100:100)+'%';
+  $('gXpT').textContent=nx?`Còn ${nx[0]-xp} XP nữa lên ${nx[1]} (1 phút = 1 XP)`:'Đã đạt cấp cao nhất 👑';
+  $('gDay').style.width=Math.min(100,td/gm*100)+'%';$('gGoalT').textContent=`${hm(td)} / ${G.goal}m`;
+  const y=new Date(n).getFullYear(),mo=new Date(n).getMonth(),cnt=new Date(y,mo+1,0).getDate(),first=(new Date(y,mo,1).getDay()+6)%7;
+  let h=WS.map(w=>`<span class="h">${w}</span>`).join('')+'<span></span>'.repeat(first);
+  for(let i=1;i<=cnt;i++){const ds=new Date(y,mo,i).getTime(),v=m[ds]||0;h+=`<span class="${v>=gm?'full':v?'part':''} ${ds===t0?'tod':''}" title="${hm(v)}">${v>=gm?'🌸':v?'🌱':i}</span>`}
+  $('cal').innerHTML=h;
+  const hrs=Math.floor(tot/36e5),wilt=td===0&&hrs>0;
+  $('garden').className='garden'+(wilt?' wilt':'');
+  $('garden').innerHTML=hrs?Array.from({length:Math.min(hrs,48)},(_,i)=>`<span>${FL[i%6]}</span>`).join(''):'<span>🌱</span>';
+  $('gardenT').textContent=`${hrs} cây (mỗi giờ làm việc trồng 1 cây) · `+(wilt?'Hôm nay chưa làm, hoa đang héo 🥀':'Hoa đang tươi 💖');
+  const sg=segs(),mx=Math.max(0,...sg.map(x=>(x.e??n)-x.s)),early=sg.some(x=>new Date(x.s).getHours()<7);
+  const B=[['🔥','Chăm chỉ 3 ngày',st>=3],['🏆','7 ngày liền',st>=7],['⏱️','Làm đủ 5 giờ',tot>=18e6],['🌳','Vườn 20 giờ',tot>=72e6],['🦾','Phiên dài 2 giờ',mx>=72e5],['🌅','Dậy sớm (trước 7h)',early],['⭐','Cấp Hoa nở',li>=2]];
+  $('badges').innerHTML=B.map(([i,t,ok])=>`<span class="bd ${ok?'':'off'}">${i} ${t}</span>`).join('');
+  const got=B.filter(b=>b[2]).map(b=>b[1]);
+  if(G.bd){const nw=got.filter(x=>!G.bd.includes(x));if(nw.length){say(innerWidth/2,innerHeight/2,'🏅 Huy hiệu mới: '+nw[0]);petals()}}
+  if(G.lv!==undefined&&li>G.lv){say(innerWidth/2,innerHeight/2-40,'🎉 Lên cấp: '+LV[li][1]);petals()}
+  if(td>=gm&&G.cel!==t0){G.cel=t0;petals();say(innerWidth/2,innerHeight/2,'🎯 Đủ mục tiêu hôm nay!');love()}
+  if(JSON.stringify([G.bd,G.lv])!==JSON.stringify([got,li])){G.bd=got;G.lv=li}
+  saveG();
+}
+$('gGoal').value=G.goal;$('gGoal').onchange=e=>{G.goal=Math.max(5,+e.target.value||60);saveG();renderGame()};
+const cat=$('cat'),bub=$('bub'),C={x:innerWidth-100,y:innerHeight-110,tx:innerWidth-100,ty:innerHeight-110,k:.03,mode:'idle',until:0,next:Date.now()+5000,sl:0,px:0,py:0,dir:1};
+const cmd=c=>cat.setAttribute('class',c||'');
+function cbub(t,ms=3200){$('bt').textContent='💭 '+t;bub.style.opacity=1;clearTimeout(cbub.h);cbub.h=setTimeout(()=>bub.style.opacity=0,ms+t.length*40)}
+function runTo(k,ms){let x,y,i=0;do{x=Math.random()*(innerWidth-70);y=innerHeight*.25+Math.random()*(innerHeight*.7-70)}while(i++<8&&Math.hypot(x-C.x,y-C.y)<250);C.tx=x;C.ty=y;C.k=k;C.mode='run';C.until=Date.now()+ms}
+const TH={love:['Sen ơi... em thích ở gần sen lắm đó 💕','Hừm, loài người này cũng không tệ, ta cho phép đi theo 🐾','Chủ nhân đi đâu, em đi đó~ 😻','Thôi được, hôm nay ta yêu sen một chút thôi nhé'],hate:['Hừ... loài người, đừng chạm vào ta 😾','Sen dám sờ ta khi còn chưa làm việc sao?! 💢','Phiền ghê, ta đi chỗ khác đây. Sen tự suy nghĩ lại đi','Chủ nhân chưa làm việc mà đòi vuốt ve ta à? Hừ 😼'],sleep:['Zzz... sen ơi đừng làm ồn... 💤','Ta ngủ chút, sen cứ làm việc đi... 😴'],play:['Ta đang vui, sen đuổi thử xem 😸','Meo... bắt được ta thì sen giỏi lắm 🐾'],work:['Suỵt... sen đang tập trung, em canh chừng cho 👀','Ta thấy sen đang cố gắng. Cũng không tệ đâu 🌸'],idle:['Sen ơi, hôm nay làm được bao nhiêu giờ rồi? 🤔','Ta để ý rồi nha, sen lướt điện thoại đúng không? 👀','Chủ nhân giỏi lắm... nếu chịu mở sách ra 📖','Loài người thật kỳ lạ, cứ thích ngồi nhìn màn hình','Em đói... nhưng sen cứ làm nốt đã đi 🐟']};
+function love(){C.mode='follow';C.k=.06;C.until=Date.now()+9000;cmd('love');cbub(pick(TH.love));burst(C.x+32,C.y,8)}
+function hate(){const w=(dayMap()[sod(Date.now())]||0)>0;cmd('hate');cbub(w?pick(TH.hate.slice(0,3)):TH.hate[3],2800);runTo(.12,2600)}
+function sleep(){cmd('sleep');cbub(pick(TH.sleep),4500);C.mode='idle';C.sl=Date.now()+6000}
+function play(){cmd('');cbub(pick(TH.play));runTo(.1,2000)}
+const catHype=a=>{if(a==='end')love();else if(a==='start')cbub('Sen cố lên, em ở đây canh chừng 💪')};
+cat.addEventListener('pointerdown',e=>{e.stopPropagation();const w=(dayMap()[sod(Date.now())]||0)>0,r=Math.random(),a=w?.5:.2,b=w?.2:.45;if(r<a)love();else if(r<a+b)hate();else if(r<a+b+.15)sleep();else play()});
+addEventListener('pointermove',e=>{C.px=e.clientX;C.py=e.clientY});
+addEventListener('pointerdown',e=>{C.px=e.clientX;C.py=e.clientY;burst(e.clientX,e.clientY,5)});
+(function loop(){const n=Date.now();
+  if(C.mode==='follow'){C.tx=C.px+20;C.ty=C.py+20;if(n>C.until){C.mode='idle';C.k=.03;cmd('');cbub('Ta mỏi chân rồi, tự đi chỗ khác đây 😼')}}
+  else if(C.mode==='run'&&n>C.until){C.mode='idle';C.k=.03;cmd('')}
+  else if(C.mode==='idle'&&n>C.next&&n>C.sl){C.tx=Math.random()*(innerWidth-70);C.ty=innerHeight-70-Math.random()*50;C.k=.02;C.next=n+9000+Math.random()*9000}
+  if(C.sl&&n>C.sl){C.sl=0;cmd('')}
+  if(n>(C.th=C.th||n+20000)&&C.mode==='idle'&&!C.sl){C.th=n+26000+Math.random()*20000;cbub(pick(projects.some(p=>status(p)==='run')?TH.work:TH.idle))}
+  const dx=C.tx-C.x;if(Math.abs(dx)>4)C.dir=dx>0?1:-1;
+  C.x=Math.min(Math.max(C.x+dx*C.k,0),innerWidth-84);C.y=Math.min(Math.max(C.y+(C.ty-C.y)*C.k,0),innerHeight-60);
+  cat.style.transform=`translate(${C.x}px,${C.y}px) scaleX(${C.dir})`;
+  bub.style.left=Math.min(Math.max(C.x+(C.dir>0?0:41),6),innerWidth-bub.offsetWidth-8)+'px';bub.style.top=Math.max(C.y+6,bub.offsetHeight+30)+'px';
+  requestAnimationFrame(loop)})();
 // theme (mặc định sáng)
 const root=document.documentElement;let th='light';try{th=localStorage.getItem('gio-theme')||'light'}catch(e){}
 const setTh=t=>{th=t;root.dataset.theme=t;document.querySelectorAll('[data-th]').forEach(b=>b.classList.toggle('on',b.dataset.th===t));try{localStorage.setItem('gio-theme',t)}catch(e){}};setTh(th);
