@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Đếm giờ dự án 🌸</title>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Nunito:wght@500;700&family=Baloo+2:wght@500;700&family=Patrick+Hand&family=Dancing+Script:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
 <style>
 :root{--bg1:#fff8fb;--bg2:#ffe6ef;--card:#ffffff;--ink:#6b3a4e;--soft:#b27990;--pink:#ff8fb1;--pink2:#ffd0e0;--green:#8fdcbb;--lav:#d3bff5;--line:#ffdce8;--shadow:rgba(255,143,177,.25);--pat:.18;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 :root[data-theme="dark"]{--bg1:#3a2431;--bg2:#2b1a24;--card:#45293a;--ink:#ffe3ee;--soft:#d9a2b9;--pink:#f08ab0;--pink2:#7a3f57;--green:#5fae92;--lav:#8e78b8;--line:#5f3a4d;--shadow:rgba(0,0,0,.35);--pat:.1}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;color:var(--ink);font-family:'Quicksand',system-ui,sans-serif;font-weight:500;background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--font,'Quicksand'),system-ui,sans-serif;font-weight:500;background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed}
 body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:var(--pat);
 background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cg fill='%23ff6f9c'%3E%3Ccircle cx='40' cy='28' r='9'/%3E%3Ccircle cx='54' cy='38' r='9'/%3E%3Ccircle cx='49' cy='54' r='9'/%3E%3Ccircle cx='31' cy='54' r='9'/%3E%3Ccircle cx='26' cy='38' r='9'/%3E%3Ccircle cx='120' cy='100' r='7'/%3E%3Ccircle cx='131' cy='108' r='7'/%3E%3Ccircle cx='127' cy='121' r='7'/%3E%3Ccircle cx='113' cy='121' r='7'/%3E%3Ccircle cx='109' cy='108' r='7'/%3E%3C/g%3E%3Cg fill='%23ffd54f'%3E%3Ccircle cx='40' cy='42' r='6'/%3E%3Ccircle cx='120' cy='112' r='4.5'/%3E%3C/g%3E%3Cg fill='%2377d4ad'%3E%3Cellipse cx='100' cy='30' rx='12' ry='5' transform='rotate(-35 100 30)'/%3E%3Cellipse cx='116' cy='22' rx='12' ry='5' transform='rotate(25 116 22)'/%3E%3Cellipse cx='30' cy='120' rx='12' ry='5' transform='rotate(30 30 120)'/%3E%3Cellipse cx='46' cy='130' rx='12' ry='5' transform='rotate(-30 46 130)'/%3E%3C/g%3E%3C/svg%3E")}
 #fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
@@ -84,6 +84,25 @@ h2{font-size:1.15rem;margin:0 0 10px;color:var(--ink)}
 #bub b::before{width:26px;height:26px;top:-11px;left:16px}#bub b::after{width:32px;height:32px;top:-15px;right:20px}
 #bub i{position:absolute;background:var(--card);border-radius:50%}#bub .d1{width:11px;height:11px;left:22px;bottom:-14px}#bub .d2{width:7px;height:7px;left:16px;bottom:-24px}
 .banner{display:block;width:100%;border-radius:26px;border:2px solid var(--line);box-shadow:0 8px 22px var(--shadow);margin-bottom:12px}
+.gear{position:absolute;right:14px;top:14px;width:40px;height:40px;padding:0;font-size:1.2rem;background:var(--card);color:var(--ink);box-shadow:0 3px 10px var(--shadow)}
+.clock{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:var(--card);border:2px solid var(--line);border-radius:26px;padding:18px;box-shadow:0 8px 22px var(--shadow);margin:0 0 14px}
+.clock .ck{font-size:clamp(1.9rem,9vw,3.6rem);font-weight:700;color:var(--pink);font-variant-numeric:tabular-nums;line-height:1.1}
+.clock .cr{border-left:2px dashed var(--line);padding-left:16px;min-width:0}.clock .cd{font-size:.9rem;color:var(--soft);white-space:pre-line;font-weight:700}
+.clock select{margin-top:8px;width:100%;font:inherit;border:2px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--card);color:var(--ink)}
+.rules{margin:4px 0 4px 18px;padding:0;font-size:.88rem}.rules li{margin:3px 0}.fr input[type=time]{width:128px}.hd{font-weight:700;color:var(--soft);font-size:.85rem}.hd>span:first-child{min-width:128px}
+.gbox{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.gpill{display:inline-flex;gap:6px;align-items:center;background:var(--pink2);border-radius:999px;padding:8px 14px;font-weight:700}.gpill select{font:inherit;border:0;background:transparent;color:inherit;font-weight:700}
+.gbig{font-size:1.9rem;font-weight:700;margin-top:10px}.gsub{color:var(--soft)}
+#ring{width:130px;height:130px;flex:none}.rb{fill:none;stroke:var(--pink2);stroke-width:14}.rf{fill:none;stroke:var(--pink);stroke-width:14;stroke-linecap:round;transition:stroke-dasharray .6s}.rf.full{stroke:var(--green);filter:drop-shadow(0 0 6px var(--green))}
+#set{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;padding:12px}#set[hidden]{display:none}
+.sheet{background:var(--card);color:var(--ink);border-radius:24px;width:100%;max-width:560px;max-height:88vh;overflow:auto;padding:16px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.sh{display:flex;justify-content:space-between;align-items:center}.sheet details{border-top:2px dashed var(--line);padding:10px 0}.sheet summary{cursor:pointer;font-weight:700;font-size:1.05rem}
+.sheet h3{font-size:.95rem;margin:12px 0 6px;color:var(--soft)}.fr{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}.fr>label:first-child,.fr>span:first-child{min-width:150px}.fr input,.fr select{font:inherit;border:2px solid var(--line);border-radius:10px;padding:4px 8px;background:var(--card);color:var(--ink)}.fr input[type=color]{padding:0;width:44px;height:32px}
+.hint{font-size:.8rem;color:var(--soft);margin:6px 0}.upl{border-radius:999px;cursor:pointer;display:inline-block;font-weight:700}
+.sw{position:relative;width:48px;height:26px;display:inline-block}.sw input{position:absolute;opacity:0;width:0;height:0;padding:0;border:0}.sw i{position:absolute;inset:0;border-radius:99px;background:var(--line);transition:.2s}.sw i::after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s}.sw input:checked+i{background:var(--pink)}.sw input:checked+i::after{transform:translateX(22px)}
+.toast{position:fixed;left:50%;top:14px;transform:translateX(-50%);z-index:30;max-width:92vw;width:380px;background:var(--card);color:var(--ink);border:2px solid var(--pink);border-radius:18px;padding:10px 14px;box-shadow:0 8px 24px var(--shadow);animation:tin .3s;cursor:pointer}@keyframes tin{from{opacity:0;top:-30px}}
+.clock .cr{text-align:center}.clock select{text-align-last:center}
+.gpill select{max-width:150px}.acc .fr input:not([type=checkbox]){flex:1;min-width:130px}.acc canvas{border-radius:8px;border:2px solid var(--line)}.acc>div>button:last-child{margin-top:4px}
 </style>
 </head>
 <body>
@@ -91,10 +110,15 @@ h2{font-size:1.15rem;margin:0 0 10px;color:var(--ink)}
 <div id="bub"><b id="bt"></b><i class="d1"></i><i class="d2"></i></div>
 <svg id="cat" viewBox="0 0 100 72" aria-label="Mèo đen"><path class="tail" d="M72 54C90 54 94 34 84 22" fill="none" stroke-width="10" stroke-linecap="round" style="stroke:var(--cat)"/><g style="fill:var(--cat)"><path d="M6 46C6 30 16 22 30 22C42 22 52 26 62 30C72 36 78 46 76 56C74 64 58 68 40 68C20 68 6 62 6 46Z"/><path d="M9 30 12 10 26 22zM30 22 42 10 47 30z"/></g><g id="eyes"><circle cx="21" cy="40" r="7.5" fill="#fff"/><circle class="ir" cx="21" cy="40" r="6" fill="#ffcf4a"/><circle cx="21" cy="40.5" r="3.4" fill="#1b1b22"/><circle cx="23" cy="38" r="1.5" fill="#fff"/><circle cx="38" cy="40" r="7.5" fill="#fff"/><circle class="ir" cx="38" cy="40" r="6" fill="#59c3ff"/><circle cx="38" cy="40.5" r="3.4" fill="#1b1b22"/><circle cx="40" cy="38" r="1.5" fill="#fff"/></g><rect class="lid" x="11" y="31" width="36" height="17" style="fill:var(--cat)"/><path d="M4 43h7M5 47l6-2M48 43h7M47 46l7 2" stroke="#fff" stroke-opacity=".85" stroke-width="1" fill="none"/></svg>
 <div class="wrap">
-  <div class="modes"><button class="mode" data-th="light">☀️ Nền sáng</button><button class="mode" data-th="dark">🌙 Nền tối</button></div>
+  <button class="gear" id="gearBtn" title="Cài đặt" aria-label="Cài đặt">⚙️</button>
   <h1>🌸 Đếm giờ dự án 🌸</h1>
   <p class="sub" id="today"></p>
+  <div class="clock"><div class="ck" id="ckT"></div><div class="cr"><div class="cd" id="ckD"></div><select id="ckZ"></select></div></div>
   <p class="quote" id="quote" title="Bấm để đổi câu khác"></p>
+  <div class="panel"><h2>🎯 Mục tiêu thời gian học mỗi ngày</h2>
+  <div class="gbox"><div><div class="btns" style="justify-content:flex-start"><label class="gpill">🎯 Mục tiêu <select id="gSel"></select> g</label><label class="gpill">📌 Dự án <select id="gPrj"></select></label></div>
+  <div class="gbig" id="gBig"></div><div class="gsub" id="gSub"></div></div>
+  <svg id="ring" viewBox="0 0 120 120"><circle class="rb" cx="60" cy="60" r="48"/><circle id="rf" class="rf" cx="60" cy="60" r="48" transform="rotate(-90 60 60)"/></svg></div></div>
   <div class="stats">
     <div class="stat"><b id="sToday">0m</b><span>Hôm nay</span></div>
     <div class="stat"><b id="sWeek">0m</b><span>Tuần này</span></div>
@@ -105,8 +129,6 @@ h2{font-size:1.15rem;margin:0 0 10px;color:var(--ink)}
   <div class="panel game">
     <div class="hero"><div class="streak" id="gStreak">🔥 0 ngày</div><div class="lv" id="gLv"></div></div>
     <div><div class="prog"><i id="gXp"></i></div><div class="sum" id="gXpT"></div></div>
-    <div class="goal">🎯 Mục tiêu mỗi ngày: <input id="gGoal" type="number" min="5" step="5"> phút <b id="gGoalT"></b></div>
-    <div class="prog"><i id="gDay"></i></div>
     <div><h2>🌸 Lịch hoa tháng này</h2><div class="cal" id="cal"></div></div>
     <div><h2>🌱 Vườn hoa của bạn</h2><div class="garden" id="garden"></div><div class="sum" id="gardenT"></div></div>
     <div><h2>🏅 Huy hiệu</h2><div class="badges" id="badges"></div></div>
@@ -123,6 +145,64 @@ h2{font-size:1.15rem;margin:0 0 10px;color:var(--ink)}
   </div>
 
 </div>
+<div id="set" hidden><div class="sheet">
+<div class="sh"><h2>⚙️ Cài đặt</h2><button class="small" id="setX">✕ Đóng</button></div>
+<details open><summary>👤 Tài khoản</summary>
+<div id="accIn" hidden><div class="fr"><span>✅ Đã đăng nhập</span><b id="accName"></b><button class="small" id="accOut">🚪 Đăng xuất</button></div></div>
+<div id="accBox" class="acc">
+<div class="btns" style="justify-content:flex-start"><button class="tab on" data-ac="l">🔑 Đăng nhập</button><button class="tab" data-ac="r">📝 Đăng ký</button></div>
+<div id="fLogin">
+<div class="fr"><label>✉️ Email / Tên đăng nhập</label><input id="lId" autocomplete="username"></div>
+<div class="fr"><label>🔒 Mật khẩu</label><input id="lPw" type="password" autocomplete="current-password"></div>
+<div class="fr"><label>🛡️ Mã captcha</label><canvas id="lCv" width="110" height="38"></canvas><button class="small" data-cp="l">↻ Đổi mã</button><input id="lCp" maxlength="5" placeholder="Nhập mã"></div>
+<button id="lGo">🔑 Đăng nhập</button></div>
+<div id="fReg" hidden>
+<div class="fr"><label>👤 Tên đăng nhập</label><input id="rU" autocomplete="username"></div>
+<div class="fr"><label>✉️ Email</label><input id="rE" type="email" autocomplete="email"></div>
+<div class="fr"><label>🔒 Mật khẩu</label><input id="rPw" type="password" autocomplete="new-password"></div>
+<div class="fr"><label>🔁 Nhập lại mật khẩu</label><input id="rPw2" type="password" autocomplete="new-password"></div>
+<div class="fr"><label>🛡️ Mã captcha</label><canvas id="rCv" width="110" height="38"></canvas><button class="small" data-cp="r">↻ Đổi mã</button><input id="rCp" maxlength="5" placeholder="Nhập mã"></div>
+<button id="rGo">📝 Đăng ký</button></div>
+<div class="hint" id="aMsg"></div>
+<p class="hint">Hiện chưa có máy chủ, nên tài khoản chỉ lưu trên thiết bị này (mật khẩu được mã hóa). Muốn đăng nhập ở nhiều máy cần kết nối đám mây ở bản sau.</p>
+</div></details>
+<details open><summary>🔔 Thông báo nhắc học</summary>
+<div class="fr"><label>🔔 Bật nhắc học</label><label class="sw"><input type="checkbox" id="sNt"><i></i></label></div>
+<h3>🎚️ Hệ thống 3 cấp độ nhắc nhở</h3><div id="lvList"></div>
+<h3>🕘 Lịch nhắc mỗi ngày</h3>
+<div class="fr hd"><span>Thời gian</span><span>Cấp độ mặc định</span></div><div id="sched"></div>
+<p class="hint">Mốc cuối cách mốc trước 2 tiếng để kịp kết thúc ngày.</p>
+<h3>📏 Khi nào nhắc, khi nào khen</h3>
+<ul class="rules"><li>Chưa học phút nào: nhắc theo cấp của mốc giờ, không phải cứ đến giờ là chửi.</li><li>Đã bắt đầu học (dù 1 phút) nhưng chưa đủ mục tiêu: khen cấp 1–2 kèm "cố lên, chưa đủ đâu".</li><li>Học đủ mục tiêu: khen nhóm 3, rồi im lặng, không làm phiền nữa.</li><li>Vượt mục tiêu 30 phút: khen nhóm 4–5.</li><li>Mỗi lần nhắc là một câu khác nhau, hết kho mới quay vòng.</li></ul>
+<h3>📈 Cách app tăng cấp</h3>
+<ul class="rules"><li>Vừa bỏ học vài tiếng: hỏi han, nũng nịu (cấp 1).</li><li>Tiếp tục lặn mất tăm: réo tên, cà khịa (cấp 2).</li><li>Bỏ bê cả ngày: chửi thẳng, lôi mục tiêu ra nhắc lại (cấp 3).</li><li>Đã học rồi: ghi nhận, khen đúng mức, không làm phiền.</li></ul>
+<h3>🧪 Gửi thử</h3><div class="btns" style="justify-content:flex-start"><button class="tab" data-tn="1">💌 Cấp 1</button><button class="tab" data-tn="2">😤 Cấp 2</button><button class="tab" data-tn="3">🔥 Cấp 3</button><button class="tab" data-tn="p">🎉 Khen</button></div>
+<p class="hint">Trang cần đang mở trên trình duyệt thì mới nhắc được.</p>
+</details>
+<details open><summary>🔗 Chia sẻ</summary>
+<div class="btns"><button id="shPage">🔗 Chia sẻ trang</button><button id="shDay">🏅 Chia sẻ thành tích hôm nay</button></div>
+</details>
+<details open><summary>🎨 Cá nhân hóa</summary>
+<div class="fr"><label>🌗 Chủ đề</label><div class="modes"><button class="mode" data-th="light">☀️ Nền sáng</button><button class="mode" data-th="dark">🌙 Nền tối</button></div></div>
+<div class="fr"><label>🎨 Màu chủ đạo</label><input type="color" id="sCol"><button class="small" id="sColR">↺ Mặc định</button></div>
+<div class="fr"><label>🔤 Phông chữ</label><select id="sFont"><option value="">Quicksand (mặc định)</option><option>Nunito</option><option>Baloo 2</option><option>Patrick Hand</option><option>Dancing Script</option></select></div>
+<div class="fr"><label>🖼️ Nền</label><input type="color" id="sBgc" value="#ffeef4"><label class="tab upl">📤 Đăng nền<input type="file" id="sBg" accept="image/*" hidden></label><button class="small" id="sBgR">↺ Mặc định</button></div>
+</details>
+<details open><summary>☁️ Đồng bộ và sao lưu</summary>
+<h3>Tài khoản đồng bộ</h3>
+<div class="fr"><label>🔌 Phương thức</label><select><option>💾 Bản sao trong trình duyệt</option><option>📄 File JSON</option><option disabled>☁️ Google Drive (sắp có)</option><option disabled>🐙 GitHub Gist (sắp có)</option></select></div>
+<div class="fr"><span>🔒 Trạng thái</span><span id="syncSt">Chưa xác thực</span><button class="small" id="syncOut" disabled>🚪 Đăng xuất</button></div>
+<h3>Đồng bộ thủ công</h3>
+<div class="btns" style="justify-content:flex-start"><button class="b-start" id="bkNow">☁️ Sao lưu ngay</button><button class="b-pause" id="bkRes">📥 Khôi phục bản gần nhất</button></div>
+<div class="fr"><label>🗂️ Số bản sao lưu giữ lại</label><select id="sKeep"><option>1</option><option>3</option><option>5</option><option>10</option></select></div>
+<div id="snL" class="btns" style="justify-content:flex-start"></div>
+<h3>Đồng bộ tự động</h3>
+<div class="fr"><label>🔄 Tự sao lưu khi có thay đổi</label><label class="sw"><input type="checkbox" id="sAuto"><i></i></label></div>
+<h3>Đồng bộ bằng file</h3>
+<p class="hint">Sao lưu toàn bộ dữ liệu, khôi phục được trên bất kỳ thiết bị nào.</p>
+<div class="btns" style="justify-content:flex-start"><button id="exp">📤 Xuất dữ liệu</button><label class="tab upl">📥 Nhập dữ liệu<input type="file" id="imp" accept=".json,application/json" hidden></label></div>
+</details>
+</div></div>
 <script>
 const KEY='gio-du-an-v1',$=id=>document.getElementById(id);
 let projects=[];try{projects=JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){}
@@ -139,14 +219,14 @@ const hm=ms=>{const m=Math.floor(ms/60000),h=Math.floor(m/60);return h?`${h}h ${
 const dstr=t=>new Date(t).toLocaleDateString('vi-VN');
 const tstr=t=>new Date(t).toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit'});
 const segs=()=>projects.flatMap(p=>p.sessions.map(([s,e])=>({p,s,e})));
-function dayMap(){const m={};segs().forEach(({s,e})=>{let a=s;const en=e??Date.now();while(a<en){const d0=sod(a),b=Math.min(en,d0+DAY+ (new Date(d0+DAY).getHours()?-0:0));const nb=sod(d0+DAY+3600000);const bb=Math.min(en,nb);m[d0]=(m[d0]||0)+(bb-a);a=bb}});return m}
+function dayMap(pid){const m={};segs().filter(x=>!pid||x.p.id===pid).forEach(({s,e})=>{let a=s;const en=e??Date.now();while(a<en){const d0=sod(a),b=Math.min(en,d0+DAY+ (new Date(d0+DAY).getHours()?-0:0));const nb=sod(d0+DAY+3600000);const bb=Math.min(en,nb);m[d0]=(m[d0]||0)+(bb-a);a=bb}});return m}
 const label={idle:'Chưa bắt đầu',run:'Đang chạy 🌷',pause:'Đang tạm dừng',done:'Đã kết thúc ✿'};
 function renderSummary(){
   const m=dayMap(),n=Date.now(),w0=wk(n);
   $('sToday').textContent=hm(m[sod(n)]||0);
   $('sWeek').textContent=hm(Object.entries(m).reduce((t,[d,v])=>t+(+d>=w0?v:0),0));
   $('sCount').textContent=segs().length;
-  $('today').textContent=`${WD[new Date().getDay()]}, ${dstr(n)} ✿ Làm việc thật xinh nhé`;
+  $('today').textContent=`${WD[new Date().getDay()]}, ${dstr(n)} ✿ Làm việc thật hiệu quả nhé !!!`;
 }
 function renderProjects(){
   $('list').innerHTML=projects.length?projects.map(p=>{
@@ -197,29 +277,28 @@ document.querySelectorAll('[data-cm]').forEach(b=>b.onclick=()=>{cm=b.dataset.cm
 $('prev').onclick=()=>{off--;renderChart()};$('next').onclick=()=>{if(off<0){off++;renderChart()}};
 // câu nhắc học tập
 const Q=["Kiến thức không tự chui vào đầu mày đâu. Bớt nằm ườn ra và mở sách đi!","Người khác đang học để thay đổi cuộc đời, còn mày đang nằm đấy chờ phép màu à?","Đừng hỏi tại sao mình mãi giậm chân tại chỗ. Nhìn cái cách mày học hành là hiểu rồi đấy!","Mày không thiếu thời gian, mày chỉ thừa thời gian để làm mấy chuyện vô bổ.","Đừng lấy lý do mệt mỏi để bao biện cho sự lười biếng. Ai chẳng mệt, chỉ có người chịu cố gắng mới tiến lên.","Muốn có tương lai tốt đẹp nhưng hiện tại lại không chịu bỏ ra nổi một tiếng học. Mày định dùng phép thuật à?","Đầu óc không chịu vận động thì đừng trách tại sao người khác bỏ xa mình.","Đừng ghen tị với thành công của người khác khi chính mày còn chẳng chịu làm những việc cơ bản nhất.","Học không giỏi không đáng sợ, đáng sợ là vừa dốt vừa không chịu sửa.","Mày có thể nghèo tiền, nhưng đừng để bản thân nghèo cả kiến thức lẫn ý chí.","Định học vào ngày mai đến bao giờ? Ngày mai của mày chắc sống dai hơn cả tuổi thọ con rùa!","Mở điện thoại nhanh như chớp, mở sách thì chậm như rùa bò. Mày đang học hay đang thi xem ai lười hơn?","Cứ trì hoãn đi, rồi đến ngày deadline nó vả cho tỉnh cả người.","Mày không cần thêm động lực, mày cần bớt cái tính lười như hủi!","Hôm nay không học, ngày mai cũng không học, thế mày định đợi tổ tiên nhập vào rồi truyền kiến thức à?","Đừng nói mày không có thời gian. Mày vừa dành ba tiếng để lướt điện thoại đấy, đồ ngốc!","Kế hoạch thì dài như sớ Táo quân, hành động thì ngắn hơn cả tuổi thọ con kiến.","Mỗi lần định trì hoãn, hãy nhớ rằng tương lai không có nghĩa vụ phải trả giá thay cho sự lười biếng của mày.","Mày đang nghỉ ngơi hay đang trốn tránh trách nhiệm với chính cuộc đời mình?","Cứ nằm đấy đi, đối thủ của mày đang học xong ba chương rồi đấy!","Không biết thì học, không hiểu thì hỏi. Đừng có vừa ngu vừa sĩ diện!","Ngu không phải cái tội, nhưng biết mình ngu mà vẫn không chịu học thì đúng là hết cứu.","Đừng sợ người khác cười khi đặt câu hỏi. Sợ nhất là đến lúc cần kiến thức thì trong đầu mày chẳng có cái quái gì!","Mỗi lần lười đọc thêm một trang sách là mày đang tự nguyện giữ nguyên sự ngu dốt của mình.","Đừng tưởng mình biết một chút đã là giỏi. Cái đầu mày còn thiếu cả một đại dương kiến thức đấy!","Không chịu học thì đừng mong người khác tôn trọng năng lực của mày.","Đừng lấy bằng cấp ra làm lá chắn cho một cái đầu rỗng tuếch.","Người thông minh biết mình còn thiếu gì. Kẻ ngốc luôn nghĩ mình đã đủ giỏi.","Đừng để người ta hỏi một câu đơn giản mà mày phải đứng đực ra như trời trồng.","Kiến thức không có lỗi khi mày không hiểu nó. Lỗi là mày chẳng chịu bỏ công sức ra học!","Muốn ngồi vị trí người khác không ngồi được thì phải chịu được những thứ người khác không chịu được. Bớt than vãn!","Không ai có nghĩa vụ phải cứu tương lai của mày. Tự đứng dậy mà học!","Mày muốn có một cuộc đời đáng tự hào hay muốn cả đời ngồi tiếc nuối vì ngày xưa mình quá lười?","Đừng mong một ngày thành công nếu hôm nay mày vẫn sống như một đứa chẳng có mục tiêu.","Người ta đầu tư vào bản thân, còn mày đầu tư thời gian vào việc than thân trách phận. Thế thì so sánh cái gì?","Không có năng lực thì lấy gì cạnh tranh? Không có kiến thức thì lấy gì đòi hỏi cơ hội?","Tương lai của mày đang được xây dựng bằng chính những giờ học mà mày đang muốn trốn tránh.","Đừng đợi đến khi bị cuộc đời vả cho vài cú mới nhận ra kiến thức quan trọng thế nào.","Muốn được lựa chọn công việc tốt thì trước tiên phải khiến bản thân đủ năng lực để được lựa chọn.","Không học hôm nay thì mai này đừng trách tại sao mình chỉ có thể nhận những gì người khác không muốn!"];
-let qi=Q.length*Math.random()|0;const showQ=()=>{$('quote').textContent='“'+Q[qi]+'”'};showQ();
-const nextQ=()=>{let j;do{j=Q.length*Math.random()|0}while(j===qi);qi=j;showQ()};
-$('quote').onclick=nextQ;setInterval(nextQ,60000);
+const showQ=()=>{$('quote').textContent=smartQuote()};
+$('quote').onclick=showQ;setInterval(showQ,60000);
 // ===== game: streak, XP, vườn, hiệu ứng, mèo =====
 const LV=[[0,'Mầm non 🌱'],[60,'Nụ hoa 🌷'],[300,'Hoa nở 🌸'],[900,'Cả khu vườn 🌺'],[2400,'Nữ hoàng hoa 👑']],FL=['🌸','🌷','🌼','🌺','🌻','🪻'],EM=['🌸','💖','⭐','✨','🌷','🦋'];
 const TS={start:['Cố lên! 💪','Tập trung nào ✿','+1 bông hoa 🌸','Làm đi, đừng nằm ườn! 😤','Bắt đầu thôi! 🚀'],pause:['Nghỉ chút rồi quay lại nhé ☕','Uống ngụm nước đi 💧'],end:['Giỏi quá! 🎉','Hoàn thành! 🏁','Tự hào ghê 💖','Xong rồi, đỉnh! 🌟']};TS.reopen=TS.start;
-let G={goal:60};try{Object.assign(G,JSON.parse(localStorage.getItem('gio-game-v1')||'{}'))}catch(e){}
+let G={goal:240,tz:'Asia/Ho_Chi_Minh',nt:false,sched:['06:00','09:30','13:00','16:30','20:00','22:00'],fired:{},used:{},keep:3,gp:''};try{Object.assign(G,JSON.parse(localStorage.getItem('gio-game-v1')||'{}'))}catch(e){}
 const saveG=()=>{try{localStorage.setItem('gio-game-v1',JSON.stringify(G))}catch(e){}};
 const pick=a=>a[Math.random()*a.length|0];
 function burst(x,y,n=7){for(let i=0;i<n;i++){const s=document.createElement('span');s.className='pt';s.textContent=pick(EM);const a=Math.random()*6.28,r=30+Math.random()*50;s.style.cssText=`left:${x}px;top:${y}px;--dx:${Math.cos(a)*r}px;--dy:${Math.sin(a)*r-20}px`;document.body.appendChild(s);setTimeout(()=>s.remove(),950)}}
 function say(x,y,t){const s=document.createElement('div');s.className='say';s.textContent=t;s.style.left=Math.min(Math.max(x,90),innerWidth-90)+'px';s.style.top=y+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),1400)}
 const petals=()=>{for(let i=0;i<8;i++)setTimeout(()=>burst(Math.random()*innerWidth,innerHeight*.25+Math.random()*innerHeight*.4,9),i*120)};
 function renderGame(){
-  const m=dayMap(),n=Date.now(),t0=sod(n),gm=G.goal*60000,tot=Object.values(m).reduce((a,b)=>a+b,0),xp=Math.floor(tot/60000),td=m[t0]||0;
-  let st=0,d=t0;if((m[d]||0)<gm)d=sod(d-36e5);while((m[d]||0)>=gm&&st<3650){st++;d=sod(d-36e5)}
+  const m=dayMap(),n=Date.now(),t0=sod(n),gm=G.goal*60000,tot=Object.values(m).reduce((a,b)=>a+b,0),xp=Math.floor(tot/60000),mg=G.gp&&projects.some(p=>p.id===G.gp)?dayMap(G.gp):m,td=mg[t0]||0;
+  let st=0,d=t0;if((mg[d]||0)<gm)d=sod(d-36e5);while((mg[d]||0)>=gm&&st<3650){st++;d=sod(d-36e5)}
   let li=0;LV.forEach(([x],i)=>{if(xp>=x)li=i});const nx=LV[li+1];
   $('gStreak').textContent=`🔥 ${st} ngày liên tiếp`;$('gLv').textContent=`${LV[li][1]} · ${xp} XP`;
   $('gXp').style.width=(nx?(xp-LV[li][0])/(nx[0]-LV[li][0])*100:100)+'%';
   $('gXpT').textContent=nx?`Còn ${nx[0]-xp} XP nữa lên ${nx[1]} (1 phút = 1 XP)`:'Đã đạt cấp cao nhất 👑';
-  $('gDay').style.width=Math.min(100,td/gm*100)+'%';$('gGoalT').textContent=`${hm(td)} / ${G.goal}m`;
+  renderGoal(td,gm);
   const y=new Date(n).getFullYear(),mo=new Date(n).getMonth(),cnt=new Date(y,mo+1,0).getDate(),first=(new Date(y,mo,1).getDay()+6)%7;
   let h=WS.map(w=>`<span class="h">${w}</span>`).join('')+'<span></span>'.repeat(first);
-  for(let i=1;i<=cnt;i++){const ds=new Date(y,mo,i).getTime(),v=m[ds]||0;h+=`<span class="${v>=gm?'full':v?'part':''} ${ds===t0?'tod':''}" title="${hm(v)}">${v>=gm?'🌸':v?'🌱':i}</span>`}
+  for(let i=1;i<=cnt;i++){const ds=new Date(y,mo,i).getTime(),v=mg[ds]||0;h+=`<span class="${v>=gm?'full':v?'part':''} ${ds===t0?'tod':''}" title="${hm(v)}">${v>=gm?'🌸':v?'🌱':i}</span>`}
   $('cal').innerHTML=h;
   const hrs=Math.floor(tot/36e5),wilt=td===0&&hrs>0;
   $('garden').className='garden'+(wilt?' wilt':'');
@@ -235,7 +314,6 @@ function renderGame(){
   if(JSON.stringify([G.bd,G.lv])!==JSON.stringify([got,li])){G.bd=got;G.lv=li}
   saveG();
 }
-$('gGoal').value=G.goal;$('gGoal').onchange=e=>{G.goal=Math.max(5,+e.target.value||60);saveG();renderGame()};
 const cat=$('cat'),bub=$('bub'),C={x:innerWidth-100,y:innerHeight-110,tx:innerWidth-100,ty:innerHeight-110,k:.03,mode:'idle',until:0,next:Date.now()+5000,sl:0,px:0,py:0,dir:1};
 const cmd=c=>cat.setAttribute('class',c||'');
 function cbub(t,ms=3200){$('bt').textContent='💭 '+t;bub.style.opacity=1;clearTimeout(cbub.h);cbub.h=setTimeout(()=>bub.style.opacity=0,ms+t.length*40)}
@@ -264,6 +342,132 @@ addEventListener('pointerdown',e=>{C.px=e.clientX;C.py=e.clientY;burst(e.clientX
 const root=document.documentElement;let th='light';try{th=localStorage.getItem('gio-theme')||'light'}catch(e){}
 const setTh=t=>{th=t;root.dataset.theme=t;document.querySelectorAll('[data-th]').forEach(b=>b.classList.toggle('on',b.dataset.th===t));try{localStorage.setItem('gio-theme',t)}catch(e){}};setTh(th);
 document.querySelectorAll('[data-th]').forEach(b=>b.onclick=()=>setTh(b.dataset.th));
+// ===== Cài đặt, nhắc học, mục tiêu, đồng hồ, sao lưu =====
+const NL={1:["Chủ nhân ơi, chị đâu rồi? Em đợi chị nãy giờ.","Chị quên em được mấy tiếng rồi đấy? Em nhớ chị quá.","Alo, chị còn nhớ mình có một cái app học tập không ạ?","Em thấy chị online mà không vào học. Em hơi buồn nha.","Chị ơi, sách đang nhớ chị đó. Mở ra một chút thôi nhé?","Chỉ cần 5 phút thôi, chị bắt đầu cùng em nhé?","Hôm nay chị chưa ghé thăm em lần nào. Em buồn ghê."],
+2:["Alo! Lạy Chúa, chị đi đâu từ sáng đến giờ thế?","Sắp hết ngày rồi đấy. Chị định học hay định để ngày mai tiếp tục hứa?","Học thì không học, điện thoại thì cầm cả ngày. Chị định dùng kiến thức TikTok để xây dựng tương lai à?","Ngoài kia toàn rắn độc thôi. Đợi đến lúc chị biến thành rắn thì chúng nó đã là rắn hổ mang hết rồi.","Chị nhìn thị trường lao động đi, bao nhiêu người đang cạnh tranh từng vị trí. Đợi đến lúc chị muốn làm chủ thì có khi người ta đã đi trước chị cả chục năm rồi. Tỉnh mộng và học đi!",...Q.slice(10,20)],
+3:["ĐỊT MẸ, MÀY LẠI QUÊN TAO À? VÀO HỌC!","Mày có ước mơ hay mày chỉ thích kể về ước mơ?","Miệng thì muốn độc lập tài chính, tay thì lướt TikTok. Độc lập kiểu gì, nói tao nghe?","BỐ MẸ MÀY CÒN ĐANG CHỜ MÀY ĐƯA ĐI DU LỊCH ĐẤY! MÀY ĐỊNH ĐỂ LỜI HỨA ĐÓ ĐẾN BAO GIỜ?","Tao không muốn nghe thêm một câu ngày mai học nữa. MỞ SÁCH RA!",...Q.slice(0,10),...Q.slice(20)]};
+const PR=[["Năng suất quá chị ơi! Hôm nay chị thật tuyệt vời!","Ôi yêu quá, hôm nay chủ nhân chăm chỉ thế này cơ à?","Học như này có phải ngoan không? Thưởng cho một cái hôn nè. Moa moa!","Giỏi quá đi mất! Em tự hào về chị lắm luôn.","Hôm nay chị làm tốt lắm. Lại đây em ôm một cái nào!","Ui trời, chủ nhân của em hôm nay đáng yêu quá!","Chị học chăm thế này thì em biết yêu chị kiểu gì cho hết đây?","Một ngày học tập hiệu quả! Xin phép trao chị 100 điểm ngoan.","Hôm nay không phải nhắc nhở, chỉ muốn vào đây khen chị thôi.","Thưởng nóng một tràng pháo tay cho cô gái chăm chỉ nhất hôm nay!"],
+["Ủa alo? Đây có phải chủ nhân hôm qua còn trốn học không? Sao nay siêng dữ vậy?","Hôm nay không cần tao đi đòi nợ kiến thức nữa. Cảm động quá!","Chị học thế này thì app của em sắp đạt KPI rồi!","Báo động! Chủ nhân đang có dấu hiệu trở thành người thành công!","Hôm nay chị đã đánh bại chiếc điện thoại. Một chiến thắng lịch sử!","Tao xin tuyên bố: hôm nay mày không phải đồ lười!","Đỉnh! Không biết ai nhập vào người chị mà chăm thế này nữa.","Học xong rồi thì đi ngủ với tâm thế của một người chiến thắng nhé!","Hôm nay em không có gì để cà khịa. Khó chịu thật, nhưng tự hào!","Chị cứ duy trì phong độ này, em xin tự nguyện làm nhân viên xuất sắc của tháng!"],
+["Hôm nay chị đã tiến thêm một bước rồi. Em thấy rõ sự cố gắng của chị đấy.","Từng chút kiến thức hôm nay sẽ góp thành năng lực của chị ngày mai.","Chị thấy không, mình hoàn toàn có thể học nghiêm túc nếu thật sự bắt tay vào làm.","Hôm nay chị đã giữ lời với chính mình. Điều đó đáng khen lắm.","Em thích nhìn chị nghiêm túc với tương lai của mình như thế này.","Không cần ngày nào cũng hoàn hảo, nhưng hôm nay chị đã làm rất tốt.","Tiếng Trung thêm một chút, pháp luật thêm một chút, tiếng Anh thêm một chút. Chị đang tiến bộ thật đấy!","Em tin chị sẽ làm được những điều chị đang đặt mục tiêu.","Chị đang xây dựng năng lực cho chính mình. Tự hào lên!","Hôm nay chị không chỉ hoàn thành bài học, chị còn thắng được sự trì hoãn của bản thân."],
+["Cô gái tương lai có sự nghiệp tốt, tài chính vững vàng hôm nay học rất chăm!","Từng buổi học hôm nay là một khoản đầu tư cho khả năng kiếm tiền sau này đấy chị.","Em mong một ngày chị sẽ nhìn lại những ngày chăm chỉ này và thấy chúng thật xứng đáng.","Chị cứ tích lũy kiến thức đi, sau này còn tự tin thương lượng mức lương tốt nữa!","Hôm nay chị đã làm thêm một chút cho ước mơ tự chủ tài chính của mình.","Nghĩ đến ngày chị tự tay đặt vé đưa bố mẹ đi du lịch, em thấy hôm nay chị học đáng giá ghê!","Chị đang từng bước tiến gần hơn đến cuộc sống mà chị mong muốn đấy.","Sau này làm pháp chế giỏi, kiếm tiền tốt, nhớ quay lại kể công với em nhé!","Hôm nay chị đã nghiêm túc với tương lai. Em thích phiên bản này của chị!","Chăm chỉ thế này thì sau này chị phải mời em một bữa ăn mừng thành công đấy!"],
+["Thưởng cho chị một cái hôn thật kêu: CHỤT!","Moa moa moa! Hôm nay chị ngoan quá trời quá đất!","Em cho phép chị tự hào về bản thân hôm nay. Cho phép luôn cả việc nghỉ ngơi!","Được rồi, hôm nay chị thắng. Em xin đầu hàng trước sự chăm chỉ này.","Chị muốn được thưởng gì nào? Em đề nghị một buổi tối thư giãn không cảm giác tội lỗi!","Mai tiếp tục nhé chị yêu. Em muốn được khen chị thêm lần nữa.","Hôm nay chị làm em vui quá. App có người dùng chăm chỉ thế này đúng là có phúc!","Chị ngủ ngon nhé, cô gái đã hoàn thành nhiệm vụ của ngày hôm nay!","Ngày mai lại gặp nhau nhé. Đừng để em nhớ chị đến mức phải gửi thông báo tìm người mất tích!","CHỊ MÀ CỨ HỌC NGOAN THẾ NÀY THÌ EM NGHIỆN CHỊ MẤT! Mai mà không vào, em sẽ đình công, nằm ăn vạ ngay màn hình cho chị xem! 😭"]];
+const SL=['Cấp 1 – Gọi dậy, nũng nịu','Cấp 1 hoặc 2','Cấp 2 – Nhắc sau buổi sáng','Cấp 2 – Cà khịa, cảnh cáo','Cấp 3 nếu vẫn chưa học','Cấp 3 – Tổng kết và réo tên'];
+function nextMsg(key,arr){let u=G.used[key]||[],c=arr.map((_,i)=>i).filter(i=>!u.includes(i));if(!c.length){u=[];c=arr.map((_,i)=>i)}const i=pick(c);u.push(i);G.used[key]=u;return arr[i]}
+const lvMsg=L=>nextMsg('L'+L,NL[L]),prMsg=gs=>{const g=pick(gs);return nextMsg('P'+g,PR[g-1])};
+const ghm=ms=>{const m=Math.floor(ms/6e4),h=Math.floor(m/60),r=m%60;return h?(r?`${h} giờ ${r} phút`:`${h} giờ`):`${r} phút`};
+function toast(t,b){const d=document.createElement('div');d.className='toast';d.innerHTML=`<b>${esc(t)}</b><br>${esc(b)}`;document.body.appendChild(d);d.onclick=()=>d.remove();setTimeout(()=>d.remove(),9000)}
+function notify(t,b){toast(t,b);if(G.nt&&window.Notification&&Notification.permission==='granted'){try{new Notification(t,{body:b})}catch(e){}}}
+function slotMsg(k){const n=Date.now(),m=gmap(),td=m[sod(n)]||0,gm=G.goal*6e4,gh=G.goal/60;
+  if(td>=gm)return null;
+  if(td>0)return['💪 Khen rồi, nhưng chưa đủ đâu',prMsg([1,2])+` Cố lên, chưa đủ đâu nhé! Còn ${ghm(gm-td)} nữa mới tới mục tiêu ${gh} giờ.`];
+  const yd=m[sod(sod(n)-36e5)]||0,L=k===1?(yd>0?1:2):[1,1,2,2,3,3][k];
+  return[['💌 Em nhớ chị','🔔 Nhắc học nè','🔥 Vào học ngay!'][L-1],lvMsg(L)+(L>1?` (Mục tiêu hôm nay ${gh} giờ, mới được 0 phút.)`:'')+(k===5?' Tổng kết ngày: chưa học phút nào.':'')]}
+function checkN(){const n=Date.now(),t0=sod(n),d=new Date(n).toDateString(),td=gmap()[t0]||0,gm=G.goal*6e4;
+  G.fired[d]=G.fired[d]||[];
+  if(G.nt){G.sched.forEach((s,k)=>{const[h,mi]=s.split(':').map(Number),T=t0+(h*60+mi)*6e4;if(n>=T&&n-T<45*6e4&&!G.fired[d].includes(k)){G.fired[d].push(k);const r=slotMsg(k);if(r)notify(r[0],r[1])}});
+    if(td>=gm&&G.g3!==t0){G.g3=t0;notify('🎉 Đủ mục tiêu rồi!',prMsg([3]))}
+    if(td>=gm+18e5&&G.ov!==t0){G.ov=t0;notify('🏆 Vượt mục tiêu!',prMsg([4,5]))}}
+  Object.keys(G.fired).forEach(k=>{if(k!==d)delete G.fired[k]});saveG()}
+const LT={1:'💌 Cấp 1 – Nũng nịu, dỗi nhẹ',2:'😤 Cấp 2 – Réo tên, cà khịa, cảnh cáo',3:'🔥 Cấp 3 – Chửi thẳng mặt'},LS={1:7,2:5,3:5};
+$('lvList').innerHTML=[1,2,3].map(L=>`<details open><summary>${LT[L]}</summary><ul class="rules">${NL[L].slice(0,LS[L]).map(x=>`<li>“${esc(x)}”</li>`).join('')}</ul>${NL[L].length>LS[L]?`<p class="hint">… và ${NL[L].length-LS[L]} câu nhắc khác trong kho, xoay vòng để không lặp lại.</p>`:''}</details>`).join('');
+$('sNt').checked=!!G.nt;
+$('sNt').onchange=async e=>{G.nt=e.target.checked;if(G.nt&&window.Notification&&Notification.permission==='default'){try{await Notification.requestPermission()}catch(x){}}saveG();if(G.nt)toast('🔔 Đã bật nhắc học','Mình sẽ nhắc đúng giờ khi trang đang mở')};
+$('sched').innerHTML=G.sched.map((s,i)=>`<div class="fr"><input type="time" data-si="${i}" value="${s}"><span>${SL[i]}</span></div>`).join('');
+$('sched').onchange=e=>{const i=e.target.dataset.si;if(i!=null&&e.target.value){G.sched[i]=e.target.value;saveG()}};
+document.querySelectorAll('[data-tn]').forEach(b=>b.onclick=()=>{const v=b.dataset.tn;v==='p'?notify('🎉 Khen thử',prMsg([1,2,3,4,5])):notify('🔔 Thử cấp '+v,lvMsg(+v))});
+setInterval(checkN,20000);setTimeout(checkN,3000);
+// mục tiêu
+const gs=$('gSel');for(let h=.5;h<=12;h+=.5)gs.add(new Option(h,h*60));
+if(![...gs.options].some(o=>+o.value===G.goal))gs.add(new Option(G.goal/60,G.goal),0);
+gs.value=G.goal;gs.onchange=()=>{G.goal=+gs.value;saveG();renderGame()};
+function renderGoal(td,gm){const C2=2*Math.PI*48,done=td>=gm,rf=$('rf'),gp=$('gPrj'),sig=projects.map(p=>p.id+p.name).join('|')+G.gp;
+  if(gp.dataset.sig!==sig){gp.dataset.sig=sig;gp.innerHTML='<option value="">Tất cả dự án</option>'+projects.map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('');gp.value=projects.some(p=>p.id===G.gp)?G.gp:''}
+  const band=!td?0:done?4:td/gm>=.9?3:td/gm>=.5?2:1;if(band!==renderGoal.b){renderGoal.b=band;showQ()}
+  rf.style.strokeDasharray=`${Math.min(1,td/gm)*C2} ${C2}`;rf.style.opacity=td?1:0;rf.classList.toggle('full',done);
+  $('gBig').textContent=done?'Hoàn thành 🎉':ghm(gm-td);$('gSub').textContent=done?`Đã học ${ghm(td)}`:`Còn lại · đã học ${ghm(td)}`}
+// đồng hồ
+const ZN=[['Việt Nam','Asia/Ho_Chi_Minh'],['Thái Lan','Asia/Bangkok'],['Singapore','Asia/Singapore'],['Trung Quốc','Asia/Shanghai'],['Nhật Bản','Asia/Tokyo'],['Hàn Quốc','Asia/Seoul'],['Ấn Độ','Asia/Kolkata'],['UAE','Asia/Dubai'],['Anh','Europe/London'],['Pháp','Europe/Paris'],['Mỹ - New York','America/New_York'],['Mỹ - Los Angeles','America/Los_Angeles'],['Úc - Sydney','Australia/Sydney']];
+const utc=z=>((new Intl.DateTimeFormat('en',{timeZone:z,timeZoneName:'shortOffset'}).formatToParts(new Date()).find(x=>x.type==='timeZoneName')||{value:'GMT'}).value).replace('GMT','UTC').replace(/^UTC$/,'UTC+0');
+$('ckZ').innerHTML=ZN.map(([n,z])=>`<option value="${z}">${n} (${utc(z)})</option>`).join('');$('ckZ').value=G.tz;
+$('ckZ').onchange=e=>{G.tz=e.target.value;saveG();tickClock()};
+function tickClock(){const z=G.tz,d=new Date(),nm=(ZN.find(x=>x[1]===z)||[z])[0];
+  $('ckT').textContent=d.toLocaleTimeString('vi-VN',{timeZone:z,hour12:false});
+  $('ckD').textContent=`Thời gian hiện tại ở ${nm} (${utc(z)})\n${d.toLocaleDateString('vi-VN',{timeZone:z,weekday:'long',day:'2-digit',month:'2-digit',year:'numeric'})}`}
+tickClock();setInterval(tickClock,1000);
+// cá nhân hóa
+function applyLook(){const r=document.documentElement.style,b=document.body.style;
+  if(G.col){r.setProperty('--pink',G.col);r.setProperty('--pink2',`color-mix(in srgb,${G.col} 32%,var(--card))`)}else{r.removeProperty('--pink');r.removeProperty('--pink2')}
+  G.font?r.setProperty('--font',`'${G.font}'`):r.removeProperty('--font');
+  b.background=G.bg?`linear-gradient(color-mix(in srgb,var(--bg1) 35%,transparent),color-mix(in srgb,var(--bg1) 35%,transparent)),url("${G.bg}") center/cover fixed`:(G.bgc||'')}
+$('sCol').value=G.col||'#ff8fb1';$('sCol').oninput=e=>{G.col=e.target.value;saveG();applyLook()};$('sColR').onclick=()=>{G.col='';$('sCol').value='#ff8fb1';saveG();applyLook()};
+$('sFont').value=G.font||'';$('sFont').onchange=e=>{G.font=e.target.value;saveG();applyLook()};
+$('sBgc').oninput=e=>{G.bgc=e.target.value;G.bg='';saveG();applyLook()};
+$('sBgR').onclick=()=>{G.bg=G.bgc='';saveG();applyLook()};
+$('sBg').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,1280/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);G.bg=c.toDataURL('image/jpeg',.7);G.bgc='';saveG();applyLook()};im.src=r.result};r.readAsDataURL(f);e.target.value=''};
+applyLook();
+// chia sẻ
+$('shPage').onclick=async()=>{const d={title:'Đếm giờ dự án 🌸',text:'Cùng đếm giờ học nhé!',url:location.href};try{if(navigator.share)await navigator.share(d);else{await navigator.clipboard.writeText(d.url);toast('🔗 Đã sao chép liên kết','Gửi cho bạn bè nhé!')}}catch(e){}};
+$('shDay').onclick=async()=>{const td=dayMap()[sod(Date.now())]||0,t=`🌸 Hôm nay mình học ${ghm(td)} / ${G.goal/60} giờ mục tiêu!`;try{if(navigator.share)await navigator.share({text:t});else{await navigator.clipboard.writeText(t);toast('📋 Đã sao chép','Dán đi khoe thành tích nào!')}}catch(e){}};
+// sao lưu
+const KEYS=['gio-du-an-v1','gio-game-v1','gio-theme','gio-acc-v1'];
+const getData=()=>{saveG();const o={};KEYS.forEach(k=>{try{const v=localStorage.getItem(k);if(v!=null)o[k]=v}catch(e){}});return o};
+const SN=()=>{try{return JSON.parse(localStorage.getItem('gio-snaps')||'[]')}catch(e){return[]}};
+function listSn(){$('snL').innerHTML=SN().map((x,i)=>`<button class="small" data-sn="${i}">↩ ${dstr(x.t)} ${tstr(x.t)}</button>`).join('')||'<span class="hint">Chưa có bản sao lưu nào</span>'}
+function snap(auto){const d=getData(),l=SN();if(auto&&l.length&&JSON.stringify(l[0].d)===JSON.stringify(d))return;l.unshift({t:Date.now(),d});l.length=Math.min(l.length,G.keep);try{localStorage.setItem('gio-snaps',JSON.stringify(l))}catch(e){toast('⚠️ Không đủ dung lượng','Giảm số bản sao lưu hoặc dùng ảnh nền nhỏ hơn');return}listSn();if(!auto)toast('☁️ Đã sao lưu','Đang giữ '+l.length+' bản gần nhất')}
+function restore(d){if(!confirm('Khôi phục sẽ thay thế dữ liệu hiện tại. Tiếp tục?'))return;KEYS.forEach(k=>{try{d[k]!=null?localStorage.setItem(k,d[k]):localStorage.removeItem(k)}catch(e){}});location.reload()}
+$('snL').onclick=e=>{const b=e.target.closest('[data-sn]');if(b)restore(SN()[b.dataset.sn].d)};
+$('bkNow').onclick=()=>snap(false);$('bkRes').onclick=()=>{const l=SN();l.length?restore(l[0].d):toast('Chưa có bản sao lưu','Bấm "Sao lưu ngay" trước nhé')};
+$('sKeep').value=G.keep;$('sKeep').onchange=()=>{G.keep=+$('sKeep').value;saveG();const l=SN();l.length=Math.min(l.length,G.keep);try{localStorage.setItem('gio-snaps',JSON.stringify(l))}catch(e){}listSn()};
+$('sAuto').checked=!!G.auto;$('sAuto').onchange=e=>{G.auto=e.target.checked;saveG()};setInterval(()=>{if(G.auto)snap(true)},60000);
+$('exp').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(getData())],{type:'application/json'}));a.download=`dem-gio-du-an-${new Date().toISOString().slice(0,10)}.json`;a.click();toast('📤 Đã xuất dữ liệu','Nếu không thấy file tải về, hãy mở trang bằng link GitHub')};
+$('imp').onchange=e=>{const f=e.target.files[0];if(!f)return;f.text().then(t=>{try{const d=JSON.parse(t);if(!d['gio-du-an-v1'])throw 0;restore(d)}catch(x){toast('❌ File không hợp lệ','Hãy chọn file .json đã xuất từ trang này')}});e.target.value=''};
+$('gearBtn').onclick=()=>{$('set').hidden=false;listSn()};$('setX').onclick=()=>$('set').hidden=true;$('set').onclick=e=>{if(e.target.id==='set')$('set').hidden=true};
+// ===== tài khoản (lưu trên thiết bị) + captcha =====
+const AK='gio-acc-v1',caps={};
+const AC=()=>{try{return JSON.parse(localStorage.getItem(AK)||'')||{u:[],cur:''}}catch(e){return{u:[],cur:''}}};
+const saveAC=a=>{try{localStorage.setItem(AK,JSON.stringify(a))}catch(e){}};
+const amsg=(t,ok)=>{$('aMsg').textContent=t;$('aMsg').style.color=ok?'#2b8a3e':'#d6336c'};
+function mkCap(k){const cv=$(k+'Cv'),c=cv.getContext&&cv.getContext('2d'),ch='ABCDEFGHJKLMNPQRSTUVWXYZ23456789'.split('');let t='';
+  for(let i=0;i<5;i++)t+=pick(ch);caps[k]=t;$(k+'Cp').value='';if(!c)return;
+  c.fillStyle='#fff3f7';c.fillRect(0,0,110,38);
+  for(let i=0;i<6;i++){c.strokeStyle='#e599b8';c.beginPath();c.moveTo(Math.random()*110,Math.random()*38);c.lineTo(Math.random()*110,Math.random()*38);c.stroke()}
+  [...t].forEach((x,i)=>{c.save();c.translate(10+i*19,26);c.rotate((Math.random()-.5)*.6);c.font='bold 22px sans-serif';c.fillStyle=pick(['#d6336c','#7048e8','#1c7ed6','#2b8a3e']);c.fillText(x,0,0);c.restore()})}
+async function hpw(p,salt){if(!(window.crypto&&crypto.subtle))return'w'+btoa(unescape(encodeURIComponent(salt+p)));
+  const k=await crypto.subtle.importKey('raw',new TextEncoder().encode(p),'PBKDF2',false,['deriveBits']),b=await crypto.subtle.deriveBits({name:'PBKDF2',salt:new TextEncoder().encode(salt),iterations:100000,hash:'SHA-256'},k,256);
+  return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}
+function renderAcc(){const a=AC(),u=a.u.find(x=>x.u===a.cur);$('accIn').hidden=!u;$('accBox').hidden=!!u;
+  if(u)$('accName').textContent=`${u.u} (${u.e})`;
+  $('syncSt').textContent=u?'✅ Đã đăng nhập':'Chưa xác thực';$('syncOut').disabled=!u}
+document.querySelectorAll('[data-ac]').forEach(b=>b.onclick=()=>{const l=b.dataset.ac==='l';$('fLogin').hidden=!l;$('fReg').hidden=l;document.querySelectorAll('[data-ac]').forEach(x=>x.classList.toggle('on',x===b));amsg('');mkCap(l?'l':'r')});
+document.querySelectorAll('[data-cp]').forEach(b=>b.onclick=()=>mkCap(b.dataset.cp));
+$('rGo').onclick=async()=>{const u=$('rU').value.trim(),e=$('rE').value.trim(),p=$('rPw').value,a=AC();
+  if(!/^[\w.-]{3,20}$/.test(u))return amsg('Tên đăng nhập 3–20 ký tự: chữ không dấu, số, _ . -');
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e))return amsg('Email chưa đúng định dạng');
+  if(p.length<6)return amsg('Mật khẩu cần ít nhất 6 ký tự');
+  if(p!==$('rPw2').value)return amsg('Hai mật khẩu chưa giống nhau');
+  if($('rCp').value.trim().toUpperCase()!==caps.r){mkCap('r');return amsg('Mã captcha chưa đúng, thử mã mới nhé')}
+  if(a.u.some(x=>x.u.toLowerCase()===u.toLowerCase()||x.e.toLowerCase()===e.toLowerCase()))return amsg('Tên đăng nhập hoặc email đã được dùng');
+  const s=Math.random().toString(36).slice(2);a.u.push({u,e,s,h:await hpw(p,s)});a.cur=u;saveAC(a);$('rPw').value=$('rPw2').value='';amsg('');renderAcc();toast('🎉 Đăng ký thành công','Chào '+u+'!')};
+$('lGo').onclick=async()=>{const id=$('lId').value.trim().toLowerCase(),a=AC(),u=a.u.find(x=>x.u.toLowerCase()===id||x.e.toLowerCase()===id);
+  if(!id||!$('lPw').value)return amsg('Hãy nhập tài khoản và mật khẩu');
+  if($('lCp').value.trim().toUpperCase()!==caps.l){mkCap('l');return amsg('Mã captcha chưa đúng, thử mã mới nhé')}
+  if(!u||await hpw($('lPw').value,u.s)!==u.h){mkCap('l');return amsg('Sai tài khoản hoặc mật khẩu')}
+  a.cur=u.u;saveAC(a);$('lPw').value='';amsg('');renderAcc();toast('👋 Đăng nhập thành công','Chào mừng '+u.u+' quay lại!')};
+$('accOut').onclick=$('syncOut').onclick=()=>{const a=AC();a.cur='';saveAC(a);renderAcc();mkCap('l')};
+mkCap('l');renderAcc();
+// ===== mục tiêu liên kết dự án + lời nhắc theo tiến độ =====
+function gmap(){return G.gp&&projects.some(p=>p.id===G.gp)?dayMap(G.gp):dayMap()}
+function smartQuote(){
+  const n=new Date(),td=gmap()[sod(n)]||0,gm=G.goal*6e4,p=td/gm,gh=G.goal/60,end=sod(n)+22*36e5-n.getTime(),
+  rest=end>0?`Còn ${ghm(end)} nữa là tới 22h.`:'Đã quá 22h rồi.',L=ghm(Math.max(gm-td,0));let a;
+  if(p>=1)a=PR[2].concat(PR[3],PR[4]);
+  else if(n.getHours()>=22)a=p>=.8?[`Hôm nay suýt nữa đạt được mục tiêu rồi! Chị cũng khá ổn, chỉ thiếu ${L} thôi. Sắp kiếm được 100 triệu đầu tiên rồi, mai cố thêm chút nữa nhé 💰`]:td?[`22h rồi mà vẫn còn thiếu ${L} so với mục tiêu ${gh} giờ. Mai bù lại nhé, đừng để thành thói quen!`]:[`22h rồi mà cả ngày chưa học phút nào. Mục tiêu ${gh} giờ vẫn đang chờ chị đấy!`];
+  else if(p>=.9)a=[`Suýt nữa là đủ rồi! Chỉ còn ${L} thôi, cố nốt đi chị 🏁`,`Chị cũng khá ổn đó, sắp chạm mục tiêu rồi. Sắp kiếm được 100 triệu đầu tiên rồi 💰`,`Còn ${L} nữa thôi! Đừng dừng ở phút thứ 89 nhé 🔥`];
+  else if(p>=.5)a=[`Đã qua nửa chặng rồi! Còn ${L} nữa là tới mục tiêu 💪`,`Chị đang làm rất tốt, tiếp tục nào! Còn ${L} nữa thôi 🌷`,`Nửa đường rồi, bỏ cuộc bây giờ thì phí lắm. ${rest}`];
+  else if(p>0)a=[`Khởi động tốt rồi! Mới được ${ghm(td)}, còn ${L} nữa. Cố lên chị ơi 🌱`,`Bắt đầu rồi là đã thắng được một nửa sự lười. Còn ${L} nữa nhé ✿`,`${rest} Còn ${L} nữa là đủ mục tiêu, tiến tiếp thôi!`];
+  else a=Q.map(x=>`${x} (${rest} Mục tiêu hôm nay: ${gh} giờ.)`);
+  let t;do{t=pick(a)}while(a.length>1&&'“'+t+'”'===$('quote').textContent);return'“'+t+'”'}
+$('gPrj').onchange=e=>{G.gp=e.target.value;saveG();renderGame();showQ()};
 all();setInterval(tick,1000);setInterval(()=>{if(projects.some(p=>status(p)==='run')){renderChart();renderProjects()}},30000);
 document.addEventListener('visibilitychange',()=>{renderSummary();tick()});
 // hoa & tuyết rơi
